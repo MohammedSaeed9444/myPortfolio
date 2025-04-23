@@ -1,0 +1,21 @@
+
+import React from 'react';
+
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="py-8 glass">
+      <div className="container mx-auto px-4 text-center">
+        <p className="text-sm text-muted-foreground">
+          &copy; {currentYear} Mohammed Saeed. All rights reserved.
+        </p>
+        <p className="text-xs text-muted-foreground mt-1">
+          Built with React, Tailwind CSS, and shadcn/ui
+        </p>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
