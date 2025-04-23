@@ -1,8 +1,6 @@
-
 import React from 'react';
 import { 
-  Code, FileCode, Python, 
-  Database, 
+  Code, FileCode, Database, 
   Figma, Github, Globe
 } from 'lucide-react';
 
@@ -13,7 +11,7 @@ interface Skill {
 }
 
 const skills: Skill[] = [
-  { name: 'Python', icon: Python, category: 'Languages' },
+  { name: 'Python', icon: Code, category: 'Languages' },
   { name: 'JavaScript', icon: FileCode, category: 'Languages' },
   { name: 'Node.js', icon: FileCode, category: 'Frameworks' },
   { name: 'Next.js', icon: Code, category: 'Frameworks' },
