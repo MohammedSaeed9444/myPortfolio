@@ -20,19 +20,22 @@ const Index = () => {
 
     const observer = new IntersectionObserver(handleIntersection, {
       root: null,
-      rootMargin: '0px',
+      rootMargin: '50px',
       threshold: 0.1
     });
 
-    document.querySelectorAll('.glass-card').forEach(element => {
-      observer.observe(element);
+    // Use requestAnimationFrame to avoid blocking the main thread
+    requestAnimationFrame(() => {
+      document.querySelectorAll('.glass-card').forEach(element => {
+        observer.observe(element);
+      });
     });
 
     return () => observer.disconnect();
   }, []);
 
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden scroll-smooth">
       <Navbar />
       <HeroSection />
       <ProjectsSection />
