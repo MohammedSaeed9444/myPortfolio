@@ -1,29 +1,25 @@
+'use client';
+
 import React from 'react';
-import { 
-  Code, FileCode, Database, 
-  Figma, Github, Globe
-} from 'lucide-react';
+
 
 interface Skill {
   name: string;
-  icon: React.ElementType;
+  iconSrc: string;
   category: string;
 }
 
 const skills: Skill[] = [
-  { name: 'Python', icon: Code, category: 'Languages' },
-  { name: 'JavaScript', icon: FileCode, category: 'Languages' },
-  { name: 'Node.js', icon: FileCode, category: 'Frameworks' },
-  { name: 'Next.js', icon: Code, category: 'Frameworks' },
-  { name: 'SQL', icon: Database, category: 'Languages' },
-  { name: 'HTML', icon: Code, category: 'Frontend' },
-  { name: 'CSS', icon: Figma, category: 'Frontend' },
-  { name: 'Tailwind', icon: Code, category: 'Frontend' },
-  { name: 'React', icon: Code, category: 'Frontend' },
-  { name: 'Git', icon: Github, category: 'Tools' },
-  { name: 'GitHub', icon: Github, category: 'Tools' },
-  { name: 'VS Code', icon: Code, category: 'Tools' },
-  { name: 'REST APIs', icon: Globe, category: 'Other' }
+  { name: 'Python', iconSrc: '/py.webp', category: 'Languages' },
+  { name: 'JavaScript', iconSrc: '/js.webp', category: 'Languages' },
+  { name: 'Swift', iconSrc: '/Swift.png', category: 'Languages' },
+  { name: 'Next.js', iconSrc: '/nt.png', category: 'Frameworks' },
+  { name: 'SQL', iconSrc: '/sql.png', category: 'Languages' },
+  { name: 'React', iconSrc: '/react.png', category: 'Frameworks' },
+  { name: 'GitHub', iconSrc: '/github.png', category: 'Frontend' },
+  { name: 'Figma', iconSrc: '/fig.webp', category: 'Tools' },
+  { name: 'Tailwind', iconSrc: '/ti.webp', category: 'Frontend' },
+
 ];
 
 const SkillsSection = () => {
@@ -40,14 +36,18 @@ const SkillsSection = () => {
         <div className="glass p-8 rounded-2xl">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {skills.map((skill, index) => (
-              <div 
+              <div
                 key={skill.name}
                 className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/40 hover:bg-white/60 transition-all duration-300 hover:shadow-md group animate-fade-in"
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
-                <div className="mb-3 p-3 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                  <skill.icon size={24} />
-                </div>
+                <img
+                  src={skill.iconSrc}
+                  alt={skill.name}
+                  width={40}
+                  height={40}
+                  className="mb-3"
+                />
                 <span className="text-sm font-medium">{skill.name}</span>
                 <span className="text-xs text-muted-foreground">{skill.category}</span>
               </div>

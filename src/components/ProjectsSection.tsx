@@ -17,12 +17,12 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    name: "Cinema Booking App",
-    description: "An online cinema booking system with real-time seat selection and user authentication.",
-    techStack: ["React", "Node.js", "Express", "MongoDB"],
-    image: "https://placehold.co/600x400/3B82F6/FFFFFF/png?text=Cinema+Booking+App",
-    githubUrl: "#",
-    liveUrl: "#"
+    name: "Sberbank App",
+    description: "A simple bank dashboard with user login, transaction tracking, and balance summaries.",
+    techStack: ["Next.js", "Shadcn/ui", "Express" ],
+    image: "p11.png",
+    githubUrl: "https://github.com/MohammedSaeed9444/cberbank",
+    liveUrl: "https://dreamy-biscotti-2e5efc.netlify.app"
   },
   {
     id: 2,
@@ -36,7 +36,7 @@ const projects: Project[] = [
   {
     id: 3,
     name: "Bank Website",
-    description: "A simple bank dashboard with user login, transaction tracking, and balance summaries.",
+    description: "An online cinema booking system with real-time seat selection and user authentication.",
     techStack: ["Python (Flask)", "SQL", "CSS"],
     image: "https://placehold.co/600x400/3B82F6/FFFFFF/png?text=Bank+Website",
     githubUrl: "#",

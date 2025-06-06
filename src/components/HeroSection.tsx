@@ -22,7 +22,7 @@ const HeroSection = () => {
               Software Developer
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-lg">
-              Building sleek, responsive websites with Python, JavaScript, and modern frameworks.
+              Building sleek, responsive websites with Python, JavaScript, Swift and modern frameworks.
             </p>
             <div className="flex gap-4 pt-2">
               <Button size="lg" className="group">
@@ -38,7 +38,7 @@ const HeroSection = () => {
           <div className="md:w-1/2 flex justify-center">
             <div className="glass-card p-8 md:p-12 animate-fade-in" style={{ animationDelay: '0.3s' }}>
               <div className="w-full h-64 md:h-80 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-xl flex items-center justify-center text-white text-4xl font-bold">
-                MS
+                <img src='3.png' className='object-cover w-full h-full rounded-xl'></img>
               </div>
             </div>
           </div>

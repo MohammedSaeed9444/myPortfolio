@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -37,20 +36,38 @@ const AboutSection = () => {
               <div className="space-y-4">
                 <Card className="overflow-hidden">
                   <CardContent className="p-4 flex items-center gap-3">
-                    <div className="w-10 h-10 bg-blue-500 rounded-md flex items-center justify-center text-white font-bold">M</div>
+                    <div className="w-10 h-10 rounded-md flex items-center justify-center bg-white shadow">
+                      <img src="/meta.jpg" alt="Meta Logo" className="w-6 h-6 object-contain" />
+                    </div>
                     <div>
                       <h4 className="font-medium">Meta Front-End Developer</h4>
-                      <p className="text-sm text-muted-foreground">Certificate</p>
+                      <a
+                        href="https://www.coursera.org/account/accomplishments/specialization/SAU2JSL6S75M"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 text-sm transition duration-300 transform hover:underline hover:scale-105 hover:text-blue-800"
+                      >
+                        Certificate
+                      </a>
                     </div>
                   </CardContent>
                 </Card>
 
                 <Card className="overflow-hidden">
                   <CardContent className="p-4 flex items-center gap-3">
-                    <div className="w-10 h-10 bg-blue-500 rounded-md flex items-center justify-center text-white font-bold">G</div>
+                    <div className="w-10 h-10 rounded-md flex items-center justify-center bg-white shadow">
+                      <img src="/google.png" alt="Google Logo" className="w-6 h-6 object-contain" />
+                    </div>
                     <div>
-                      <h4 className="font-medium">Google Python Intensive</h4>
-                      <p className="text-sm text-muted-foreground">Certificate</p>
+                      <h4 className="font-medium">Google Python Crash</h4>
+                      <a
+                        href="https://www.coursera.org/account/accomplishments/verify/635GP4PSHVEK"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 text-sm transition duration-300 transform hover:underline hover:scale-105 hover:text-blue-800"
+                      >
+                        Certificate
+                      </a>
                     </div>
                   </CardContent>
                 </Card>
