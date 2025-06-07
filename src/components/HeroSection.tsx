@@ -36,10 +36,10 @@ const HeroSection: React.FC = () => {
           <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-10">
             <div className="relative">
               {/* Lamppost pole */}
-              <div className="w-2 h-32 bg-gradient-to-b from-gray-600 to-gray-800 mx-auto"></div>
+              <div className="w-2 h-32 bg-gradient-to-b from-gray-400 to-gray-600 mx-auto"></div>
               {/* Lamp fixture */}
               <div className="relative -mt-2">
-                <Lamp className="w-16 h-16 text-yellow-200 drop-shadow-2xl mx-auto animate-pulse" />
+                <Lamp className="w-16 h-16 text-white drop-shadow-2xl mx-auto animate-pulse" />
                 <div className="absolute -inset-8 bg-white/30 rounded-full blur-2xl"></div>
               </div>
             </div>
@@ -75,16 +75,6 @@ const HeroSection: React.FC = () => {
             ></div>
           </div>
 
-          {/* Subtle mouse-following ambient light */}
-          <div 
-            className="absolute w-64 h-64 rounded-full opacity-10 blur-2xl transition-all duration-500"
-            style={{
-              background: `radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 60%)`,
-              left: `${mousePosition.x - 128}px`,
-              top: `${mousePosition.y - 128}px`,
-            }}
-          ></div>
-
           {/* Floating illuminated particles */}
           <div className="absolute inset-0">
             {Array.from({ length: 8 }, (_, i) => (
@@ -109,47 +99,47 @@ const HeroSection: React.FC = () => {
             {/* Text Content */}
             <div className={`space-y-8 text-center lg:text-left transition-all duration-1200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
               {/* Badge */}
-              <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/30 backdrop-blur-sm transition-all duration-800 delay-200 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
-                <Sparkles className="w-4 h-4 text-yellow-400" />
-                <span className="text-sm font-medium text-yellow-200">Available for work</span>
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+              <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/30 backdrop-blur-sm transition-all duration-800 delay-200 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+                <Sparkles className="w-4 h-4 text-white" />
+                <span className="text-sm font-medium text-white">Available for work</span>
+                <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
               </div>
 
               {/* Main Heading */}
               <div className="space-y-4">
                 <h1 className={`text-6xl md:text-7xl lg:text-8xl font-black leading-none transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                   <span className="block text-white drop-shadow-lg">Creative</span>
-                  <span className="block bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 bg-clip-text text-transparent drop-shadow-lg">
+                  <span className="block text-white drop-shadow-lg">
                     Developer
                   </span>
                 </h1>
                 
                 <div className={`flex items-center gap-4 justify-center lg:justify-start transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                  <div className="h-px bg-gradient-to-r from-transparent via-yellow-500 to-transparent flex-1 max-w-20"></div>
-                  <span className="text-2xl font-bold text-yellow-300 drop-shadow-lg">Mohammed Saeed</span>
-                  <div className="h-px bg-gradient-to-r from-transparent via-yellow-500 to-transparent flex-1 max-w-20"></div>
+                  <div className="h-px bg-gradient-to-r from-transparent via-white to-transparent flex-1 max-w-20"></div>
+                  <span className="text-2xl font-bold text-white drop-shadow-lg">Mohammed Saeed</span>
+                  <div className="h-px bg-gradient-to-r from-transparent via-white to-transparent flex-1 max-w-20"></div>
                 </div>
               </div>
 
               {/* Description */}
               <p className={`text-xl text-gray-300 leading-relaxed max-w-lg mx-auto lg:mx-0 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                 Crafting exceptional digital experiences with cutting-edge technologies. 
-                Specializing in <span className="text-yellow-400 font-semibold">full-stack development</span> and{' '}
-                <span className="text-yellow-300 font-semibold">innovative solutions</span>.
+                Specializing in <span className="text-white font-semibold">full-stack development</span> and{' '}
+                <span className="text-white font-semibold">innovative solutions</span>.
               </p>
 
               {/* Tech Stack Icons */}
               <div className={`flex justify-center lg:justify-start gap-6 transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                 {[
-                  { icon: Code, label: 'Code', color: 'text-yellow-400' },
-                  { icon: Zap, label: 'Fast', color: 'text-yellow-300' },
-                  { icon: Sparkles, label: 'Creative', color: 'text-yellow-400' },
+                  { icon: Code, label: 'Code', color: 'text-white' },
+                  { icon: Zap, label: 'Fast', color: 'text-white' },
+                  { icon: Sparkles, label: 'Creative', color: 'text-white' },
                 ].map((item, index) => (
                   <div key={index} className="flex flex-col items-center gap-2 group cursor-pointer">
-                    <div className="p-3 rounded-full bg-white/5 border border-yellow-500/30 group-hover:border-yellow-500/50 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-yellow-500/20">
+                    <div className="p-3 rounded-full bg-white/5 border border-white/30 group-hover:border-white/50 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-white/20">
                       <item.icon className={`w-6 h-6 ${item.color} group-hover:scale-110 transition-transform duration-300`} />
                     </div>
-                    <span className="text-xs text-gray-400 group-hover:text-yellow-300 transition-colors duration-300">{item.label}</span>
+                    <span className="text-xs text-gray-400 group-hover:text-white transition-colors duration-300">{item.label}</span>
                   </div>
                 ))}
               </div>
@@ -158,7 +148,7 @@ const HeroSection: React.FC = () => {
               <div className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start transition-all duration-1000 delay-900 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                 <Button 
                   size="lg" 
-                  className="group text-lg px-8 py-6 bg-gradient-to-r from-yellow-600 to-yellow-500 hover:from-yellow-500 hover:to-yellow-400 text-black border-0 shadow-lg shadow-yellow-500/25 hover:shadow-yellow-500/40 transition-all duration-300 hover:scale-105"
+                  className="group text-lg px-8 py-6 bg-white text-black hover:bg-gray-200 border-0 shadow-lg shadow-white/25 hover:shadow-white/40 transition-all duration-300 hover:scale-105"
                   onClick={() => scrollToSection('projects')}
                 >
                   Explore My Work
@@ -167,7 +157,7 @@ const HeroSection: React.FC = () => {
                 <Button 
                   size="lg" 
                   variant="outline"
-                  className="text-lg px-8 py-6 border-2 border-yellow-500/50 text-yellow-300 hover:bg-yellow-500/10 hover:border-yellow-400 hover:text-yellow-200 transition-all duration-300 hover:scale-105"
+                  className="text-lg px-8 py-6 border-2 border-white/50 text-white hover:bg-white/10 hover:border-white hover:text-white transition-all duration-300 hover:scale-105"
                   onClick={() => scrollToSection('contact')}
                 >
                   Let&apos;s Connect
@@ -180,8 +170,8 @@ const HeroSection: React.FC = () => {
               <div className="relative">
                 {/* Main Image Container */}
                 <div className="relative group">
-                  <div className="absolute -inset-4 bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-400 rounded-3xl blur-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
-                  <div className="relative w-80 h-96 md:w-96 md:h-[28rem] rounded-3xl overflow-hidden border border-yellow-500/30 bg-black/50 backdrop-blur-sm group-hover:scale-105 transition-all duration-500">
+                  <div className="absolute -inset-4 bg-white rounded-3xl blur-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
+                  <div className="relative w-80 h-96 md:w-96 md:h-[28rem] rounded-3xl overflow-hidden border border-white/30 bg-black/50 backdrop-blur-sm group-hover:scale-105 transition-all duration-500">
                     <img 
                       src="3.png" 
                       alt="Mohammed Saeed - Creative Developer"
@@ -192,28 +182,28 @@ const HeroSection: React.FC = () => {
                 </div>
 
                 {/* Floating Elements */}
-                <div className="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center shadow-lg shadow-yellow-500/30 animate-bounce" style={{ animationDuration: '3s' }}>
+                <div className="absolute -top-6 -right-6 w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-lg shadow-white/30 animate-bounce" style={{ animationDuration: '3s' }}>
                   <Zap className="w-8 h-8 text-black" />
                 </div>
-                <div className="absolute -bottom-6 -left-6 w-14 h-14 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center shadow-lg shadow-yellow-500/30 animate-pulse">
+                <div className="absolute -bottom-6 -left-6 w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-lg shadow-white/30 animate-pulse">
                   <Code className="w-7 h-7 text-black" />
                 </div>
-                <div className="absolute top-1/3 -right-4 w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center shadow-lg shadow-yellow-500/30 animate-ping" style={{ animationDuration: '2s' }}>
+                <div className="absolute top-1/3 -right-4 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg shadow-white/30 animate-ping" style={{ animationDuration: '2s' }}>
                   <Sparkles className="w-6 h-6 text-black" />
                 </div>
 
                 {/* Code Snippet Floating Card */}
-                <div className="absolute -bottom-4 right-8 bg-black/80 backdrop-blur-sm border border-yellow-500/30 rounded-lg p-4 shadow-xl shadow-yellow-500/20 transform rotate-3 hover:rotate-0 transition-transform duration-300">
+                <div className="absolute -bottom-4 right-8 bg-black/80 backdrop-blur-sm border border-white/30 rounded-lg p-4 shadow-xl shadow-white/20 transform rotate-3 hover:rotate-0 transition-transform duration-300">
                   <div className="flex items-center gap-2 mb-2">
-                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                    <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-white rounded-full"></div>
+                    <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
+                    <div className="w-3 h-3 bg-gray-600 rounded-full"></div>
                   </div>
                   <div className="text-xs font-mono text-gray-300">
-                    <div className="text-yellow-400">const</div>
-                    <div className="text-yellow-300">developer = &#123;</div>
-                    <div className="text-green-400 ml-2">creative: true</div>
-                    <div className="text-yellow-300">&#125;</div>
+                    <div className="text-white">const</div>
+                    <div className="text-white">developer = &#123;</div>
+                    <div className="text-gray-300 ml-2">creative: true</div>
+                    <div className="text-white">&#125;</div>
                   </div>
                 </div>
               </div>
@@ -223,13 +213,13 @@ const HeroSection: React.FC = () => {
           {/* Bottom Stats */}
           <div className={`mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             {[
-              { number: '3+', label: 'Years Experience', color: 'from-yellow-400 to-yellow-500' },
-              { number: '15+', label: 'Projects Completed', color: 'from-yellow-300 to-yellow-400' },
-              { number: '4', label: 'Tech Stacks', color: 'from-yellow-500 to-yellow-600' },
-              { number: '100%', label: 'Client Satisfaction', color: 'from-yellow-200 to-yellow-400' },
+              { number: '3+', label: 'Years Experience' },
+              { number: '15+', label: 'Projects Completed' },
+              { number: '4', label: 'Tech Stacks' },
+              { number: '100%', label: 'Client Satisfaction' },
             ].map((stat, index) => (
               <div key={index} className="group cursor-pointer">
-                <div className={`text-3xl font-black bg-gradient-to-r ${stat.color} bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300`}>
+                <div className="text-3xl font-black text-white group-hover:scale-110 transition-transform duration-300">
                   {stat.number}
                 </div>
                 <div className="text-gray-400 text-sm mt-1 group-hover:text-gray-300 transition-colors duration-300">

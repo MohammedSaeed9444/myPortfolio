@@ -29,7 +29,7 @@ const projects: Project[] = [
     name: "Real Estate Website",
     description: "A responsive site showcasing properties, search/filter features, and contact form integration.",
     techStack: ["Next.js", "Tailwind CSS", "Firebase"],
-    image: "https://placehold.co/600x400/10B981/FFFFFF/png?text=Real+Estate+Website",
+    image: "https://placehold.co/600x400/000000/FFFFFF/png?text=Real+Estate+Website",
     githubUrl: "#",
     liveUrl: "#"
   },
@@ -38,7 +38,7 @@ const projects: Project[] = [
     name: "Bank Website",
     description: "An online cinema booking system with real-time seat selection and user authentication.",
     techStack: ["Python (Flask)", "SQL", "CSS"],
-    image: "https://placehold.co/600x400/10B981/FFFFFF/png?text=Bank+Website",
+    image: "https://placehold.co/600x400/000000/FFFFFF/png?text=Bank+Website",
     githubUrl: "#",
     liveUrl: "#"
   }
@@ -54,7 +54,7 @@ const ProjectsSection = () => {
         <div className="absolute top-10 left-1/2 transform -translate-x-1/2">
           <div className="relative">
             {/* Lamppost pole */}
-            <div className="w-2 h-20 bg-gradient-to-b from-gray-600 to-gray-800 mx-auto"></div>
+            <div className="w-2 h-20 bg-gradient-to-b from-gray-400 to-gray-600 mx-auto"></div>
             {/* Lamp fixture */}
             <div className="relative -mt-2">
               <Lamp className="w-12 h-12 text-white drop-shadow-lg animate-pulse mx-auto" />
@@ -172,7 +172,7 @@ const ProjectsSection = () => {
                     Code
                   </a>
                 </Button>
-                <Button size="sm" asChild className="hover-lift bg-gradient-to-r from-white/90 to-white/80 hover:from-white hover:to-white/90 text-black">
+                <Button size="sm" asChild className="hover-lift bg-white hover:bg-gray-200 text-black">
                   <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-2 h-4 w-4" />
                     Demo
