@@ -156,6 +156,13 @@ const HeroSection: React.FC = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Text Content */}
             <div className={`space-y-8 text-center lg:text-left transition-all duration-1200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
+              {/* Animated Badge */}
+              <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${isDayMode ? 'bg-green-100 border border-green-300' : 'bg-white/10 border border-white/30'} backdrop-blur-sm transition-all duration-800 delay-200 animate-pulse ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+                <Sparkles className={`w-4 h-4 animate-spin ${isDayMode ? 'text-green-600' : 'text-white'}`} style={{ animationDuration: '3s' }} />
+                <span className={`text-sm font-medium ${isDayMode ? 'text-green-800' : 'text-white'}`}>Available for work</span>
+                <div className={`w-2 h-2 rounded-full animate-ping ${isDayMode ? 'bg-green-600' : 'bg-white'}`}></div>
+              </div>
+
               {/* Main Heading */}
               <div className="space-y-4">
                 <h1 className={`text-6xl md:text-7xl lg:text-8xl font-black leading-none transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
@@ -178,6 +185,22 @@ const HeroSection: React.FC = () => {
                 Specializing in <span className={`font-semibold animate-pulse ${isDayMode ? 'text-green-600' : 'text-white'}`}>full-stack development</span> and{' '}
                 <span className={`font-semibold animate-pulse ${isDayMode ? 'text-blue-600' : 'text-white'}`}>innovative solutions</span>.
               </p>
+
+              {/* Tech Stack Icons */}
+              <div className={`flex justify-center lg:justify-start gap-6 transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                {[
+                  { icon: Code, label: 'Code', color: isDayMode ? 'text-gray-700' : 'text-white' },
+                  { icon: Zap, label: 'Fast', color: isDayMode ? 'text-gray-700' : 'text-white' },
+                  { icon: Sparkles, label: 'Creative', color: isDayMode ? 'text-gray-700' : 'text-white' },
+                ].map((item, index) => (
+                  <div key={index} className="flex flex-col items-center gap-2 group cursor-pointer">
+                    <div className={`p-3 rounded-full ${isDayMode ? 'bg-green-100 border border-green-300 group-hover:border-green-400' : 'bg-white/5 border border-white/30 group-hover:border-white/50'} transition-all duration-300 group-hover:scale-110 ${isDayMode ? 'group-hover:shadow-lg group-hover:shadow-green-200' : 'group-hover:shadow-lg group-hover:shadow-white/20'} animate-bounce`} style={{ animationDelay: `${index * 0.3}s`, animationDuration: '2s' }}>
+                      <item.icon className={`w-6 h-6 ${item.color} group-hover:scale-110 transition-transform duration-300`} />
+                    </div>
+                    <span className={`text-xs ${isDayMode ? 'text-gray-600 group-hover:text-gray-800' : 'text-gray-400 group-hover:text-white'} transition-colors duration-300`}>{item.label}</span>
+                  </div>
+                ))}
+              </div>
 
               {/* Call to Action */}
               <div className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start transition-all duration-1000 delay-900 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
@@ -247,11 +270,12 @@ const HeroSection: React.FC = () => {
           </div>
 
           {/* Bottom Stats */}
-          <div className={`mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-center transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className={`mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             {[
               { number: '3+', label: 'Years Experience' },
               { number: '15+', label: 'Projects Completed' },
               { number: '4', label: 'Tech Stacks' },
+              { number: '100%', label: 'Client Satisfaction' },
             ].map((stat, index) => (
               <div key={index} className="group cursor-pointer">
                 <div className={`text-3xl font-black group-hover:scale-110 transition-transform duration-300 animate-pulse ${textColor}`} style={{ animationDelay: `${index * 0.2}s`, animationDuration: '3s' }}>
