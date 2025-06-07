@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Github, ExternalLink } from 'lucide-react';
@@ -215,13 +216,24 @@ const ProjectsSection = () => {
               </div>
               
               <div className="flex gap-3">
-                <Button variant="outline" size="sm" asChild className={`hover-lift ${isDayMode ? 'border-gray-300 text-gray-700 hover:bg-gray-100' : 'border-white/40 text-white/90 hover:bg-white/10'} animate-pulse`} style={{ animationDuration: '5s' }}>
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  asChild 
+                  className={`${isDayMode ? 'border-gray-300 text-gray-700 hover:bg-gray-100 hover:border-gray-400' : 'border-white/40 text-white/90 hover:bg-white/20 hover:border-white/60'} transition-all duration-300 hover:scale-105 hover:shadow-md animate-pulse`} 
+                  style={{ animationDuration: '5s' }}
+                >
                   <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                    <Github className="mr-2 h-4 w-4 animate-spin" style={{ animationDuration: '8s' }} />
+                    <Github className="mr-2 h-4 w-4" />
                     Code
                   </a>
                 </Button>
-                <Button size="sm" asChild className={`hover-lift ${isDayMode ? 'bg-green-600 hover:bg-green-700 text-white' : 'bg-white hover:bg-gray-200 text-black'} animate-pulse`} style={{ animationDuration: '4s' }}>
+                <Button 
+                  size="sm" 
+                  asChild 
+                  className={`${isDayMode ? 'bg-green-600 hover:bg-green-700 text-white hover:shadow-lg hover:shadow-green-600/30' : 'bg-white hover:bg-gray-100 text-black hover:shadow-lg hover:shadow-white/30'} transition-all duration-300 hover:scale-105 animate-pulse`} 
+                  style={{ animationDuration: '4s' }}
+                >
                   <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-2 h-4 w-4" />
                     Demo

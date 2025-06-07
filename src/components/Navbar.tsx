@@ -39,12 +39,11 @@ const Navbar = () => {
     : 'bg-black/90 backdrop-blur-md border-b border-white/20';
 
   const textColor = isDayMode ? 'text-gray-900' : 'text-white';
-  const logoColor = isDayMode ? 'text-primary' : 'text-white';
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? `${navbarBg} py-3` : 'py-5'}`}>
       <div className="container mx-auto flex justify-between items-center">
-        <a href="#home" className={`text-2xl font-bold ${logoColor}`}>
+        <a href="#home" className="text-2xl font-bold text-white">
           MS
         </a>
 
@@ -54,7 +53,7 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className={`font-medium hover:text-primary transition-colors ${textColor}`}
+              className={`font-medium hover:text-blue-400 transition-colors ${textColor}`}
             >
               {link.name}
             </a>
@@ -82,7 +81,7 @@ const Navbar = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`font-medium hover:text-primary transition-colors ${textColor}`}
+                  className={`font-medium hover:text-blue-400 transition-colors ${textColor}`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.name}
