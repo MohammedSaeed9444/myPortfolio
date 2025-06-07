@@ -1,9 +1,17 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Download } from 'lucide-react';
 
 const HeroSection = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -13,108 +21,144 @@ const HeroSection = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-16">
-      {/* Enhanced Background */}
+      {/* Enhanced Background with Parallax */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50"></div>
-        <div className="absolute w-[500px] h-[500px] -top-64 -left-64 bg-gradient-to-br from-blue-200/40 to-indigo-300/40 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute w-[600px] h-[600px] -bottom-64 -right-64 bg-gradient-to-br from-purple-200/40 to-pink-300/40 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute w-[300px] h-[300px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-br from-indigo-200/20 to-blue-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div 
+          className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50"
+          style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+        ></div>
+        <div 
+          className="absolute w-[500px] h-[500px] -top-64 -left-64 bg-gradient-to-br from-blue-200/40 to-indigo-300/40 rounded-full blur-3xl animate-pulse"
+          style={{ transform: `translate(${scrollY * 0.3}px, ${scrollY * 0.2}px)` }}
+        ></div>
+        <div 
+          className="absolute w-[600px] h-[600px] -bottom-64 -right-64 bg-gradient-to-br from-purple-200/40 to-pink-300/40 rounded-full blur-3xl animate-pulse" 
+          style={{ animationDelay: '1s', transform: `translate(${-scrollY * 0.2}px, ${scrollY * 0.3}px)` }}
+        ></div>
+        <div 
+          className="absolute w-[300px] h-[300px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-br from-indigo-200/20 to-blue-300/20 rounded-full blur-3xl animate-pulse" 
+          style={{ animationDelay: '2s', transform: `translate(-50%, -50%) rotate(${scrollY * 0.1}deg)` }}
+        ></div>
+        
+        {/* Floating particles */}
+        <div className="absolute inset-0 overflow-hidden">
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-2 h-2 bg-primary/20 rounded-full animate-pulse"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${2 + Math.random() * 2}s`,
+                transform: `translateY(${scrollY * (0.1 + Math.random() * 0.2)}px)`
+              }}
+            />
+          ))}
+        </div>
       </div>
 
       <div className="section-container">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
-          {/* Text Content - Mobile: order-2, Desktop: order-1 */}
-          <div className="lg:w-1/2 space-y-8 animate-fade-in order-2 lg:order-1 text-center lg:text-left">
-            {/* Greeting */}
-            <div className="inline-block">
-              <span className="text-lg font-medium text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20">
+          {/* Text Content */}
+          <div className="lg:w-1/2 space-y-8 order-2 lg:order-1 text-center lg:text-left">
+            {/* Greeting with bounce animation */}
+            <div className="inline-block animate-fade-in">
+              <span className="text-lg font-medium text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 animate-bounce">
                 👋 Hello, I'm
               </span>
             </div>
 
-            {/* Name with gradient text */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-              <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+            {/* Name with enhanced gradient and typing animation */}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent animate-pulse">
                 Mohammed
               </span>
               <br />
-              <span className="text-foreground">Saeed</span>
+              <span className="text-foreground relative">
+                Saeed
+                <span className="absolute -right-2 top-0 w-1 h-full bg-primary animate-pulse"></span>
+              </span>
             </h1>
 
-            {/* Role */}
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-muted-foreground">
+            {/* Role with slide animation */}
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-muted-foreground animate-slide-in-right" style={{ animationDelay: '0.4s' }}>
               Software Developer
             </h2>
 
-            {/* Description */}
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            {/* Description with stagger animation */}
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed animate-fade-in" style={{ animationDelay: '0.6s' }}>
               Passionate about creating innovative digital solutions with 
-              <span className="text-primary font-medium"> Python</span>, 
-              <span className="text-primary font-medium"> JavaScript</span>, 
-              <span className="text-primary font-medium"> Swift</span>, and modern frameworks. 
+              <span className="text-primary font-medium hover:scale-110 inline-block transition-transform duration-300"> Python</span>, 
+              <span className="text-primary font-medium hover:scale-110 inline-block transition-transform duration-300"> JavaScript</span>, 
+              <span className="text-primary font-medium hover:scale-110 inline-block transition-transform duration-300"> Swift</span>, and modern frameworks. 
               Let's build something amazing together.
             </p>
 
-            {/* Call to Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
+            {/* Call to Action Buttons with enhanced animations */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start animate-fade-in" style={{ animationDelay: '0.8s' }}>
               <Button 
                 size="lg" 
-                className="group text-lg px-8 py-6 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300"
+                className="group text-lg px-8 py-6 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1"
                 onClick={() => scrollToSection('projects')}
               >
                 View My Work
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 group-hover:scale-110 transition-all duration-300" />
               </Button>
               <Button 
                 size="lg" 
                 variant="outline"
-                className="text-lg px-8 py-6 border-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                className="text-lg px-8 py-6 border-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105 hover:-translate-y-1"
                 onClick={() => scrollToSection('contact')}
               >
                 Get In Touch
               </Button>
             </div>
 
-            {/* Stats or Quick Info */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-8 pt-8 text-center lg:text-left">
-              <div>
-                <div className="text-2xl font-bold text-primary">3+</div>
+            {/* Stats with counter animation */}
+            <div className="flex flex-wrap justify-center lg:justify-start gap-8 pt-8 text-center lg:text-left animate-fade-in" style={{ animationDelay: '1s' }}>
+              <div className="hover:scale-110 transition-transform duration-300">
+                <div className="text-2xl font-bold text-primary animate-pulse">3+</div>
                 <div className="text-sm text-muted-foreground">Years Experience</div>
               </div>
-              <div>
-                <div className="text-2xl font-bold text-primary">10+</div>
+              <div className="hover:scale-110 transition-transform duration-300">
+                <div className="text-2xl font-bold text-primary animate-pulse" style={{ animationDelay: '0.5s' }}>10+</div>
                 <div className="text-sm text-muted-foreground">Projects Completed</div>
               </div>
-              <div>
-                <div className="text-2xl font-bold text-primary">4</div>
+              <div className="hover:scale-110 transition-transform duration-300">
+                <div className="text-2xl font-bold text-primary animate-pulse" style={{ animationDelay: '1s' }}>4</div>
                 <div className="text-sm text-muted-foreground">Technologies</div>
               </div>
             </div>
           </div>
 
-          {/* Image - Mobile: order-1, Desktop: order-2 */}
+          {/* Image with enhanced animations */}
           <div className="lg:w-1/2 flex justify-center order-1 lg:order-2">
             <div className="relative animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              {/* Decorative elements */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-400 to-purple-400 rounded-3xl blur-2xl opacity-20 animate-pulse"></div>
+              {/* Multiple decorative layers */}
+              <div className="absolute -inset-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 rounded-3xl blur-3xl opacity-20 animate-pulse"></div>
+              <div className="absolute -inset-4 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-3xl blur-2xl opacity-30 animate-pulse" style={{ animationDelay: '1s' }}></div>
               
-              {/* Main image container */}
-              <div className="relative glass-card p-2 hover:scale-105 transition-transform duration-300">
+              {/* Main image container with enhanced hover effects */}
+              <div className="relative glass-card p-2 hover:scale-110 hover:rotate-1 transition-all duration-500 group">
                 <div className="w-80 h-80 md:w-96 md:h-96 lg:w-[400px] lg:h-[480px] bg-gradient-to-br from-blue-400 to-indigo-500 rounded-2xl flex items-center justify-center text-white text-4xl font-bold overflow-hidden shadow-2xl">
                   <img 
                     src='3.png' 
                     alt="Mohammed Saeed - Software Developer"
-                    className='object-cover w-full h-full rounded-2xl hover:scale-110 transition-transform duration-500'
+                    className='object-cover w-full h-full rounded-2xl group-hover:scale-110 transition-transform duration-700'
                   />
                 </div>
               </div>
 
-              {/* Floating elements */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full flex items-center justify-center shadow-lg animate-bounce">
+              {/* Enhanced floating elements */}
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full flex items-center justify-center shadow-lg animate-bounce hover:animate-spin">
                 <span className="text-2xl">⚡</span>
               </div>
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-400 rounded-full flex items-center justify-center shadow-lg animate-bounce" style={{ animationDelay: '0.5s' }}>
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-400 rounded-full flex items-center justify-center shadow-lg animate-bounce hover:animate-ping" style={{ animationDelay: '0.5s' }}>
                 <span className="text-xl">🚀</span>
+              </div>
+              <div className="absolute top-1/2 -right-8 w-12 h-12 bg-gradient-to-br from-pink-400 to-red-400 rounded-full flex items-center justify-center shadow-lg animate-pulse hover:animate-bounce" style={{ animationDelay: '1.5s' }}>
+                <span className="text-lg">💡</span>
               </div>
             </div>
           </div>
