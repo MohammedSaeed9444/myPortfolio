@@ -1,24 +1,72 @@
 
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Lamp } from 'lucide-react';
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 relative about-section">
+    <section id="about" className="py-24 relative overflow-hidden about-section bg-black">
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-white opacity-80 parallax"></div>
-        <div className="absolute w-96 h-96 -bottom-48 -left-48 bg-blue-200 rounded-full blur-3xl opacity-20 floating"></div>
-        <div className="absolute w-72 h-72 top-24 right-12 bg-purple-200 rounded-full blur-2xl opacity-10 scroll-rotate"></div>
+        {/* Animated Lamppost at the top */}
+        <div className="absolute top-10 left-1/2 transform -translate-x-1/2">
+          <div className="relative">
+            {/* Lamppost pole */}
+            <div className="w-2 h-20 bg-gradient-to-b from-gray-400 to-gray-600 mx-auto"></div>
+            {/* Animated Lamp fixture */}
+            <div className="relative -mt-2">
+              <Lamp className="w-12 h-12 text-white drop-shadow-lg animate-pulse mx-auto" />
+              <div className="absolute -inset-6 bg-white/20 rounded-full blur-xl animate-ping" style={{ animationDuration: '3s' }}></div>
+              <div className="absolute -inset-8 bg-white/10 rounded-full blur-2xl animate-pulse" style={{ animationDuration: '5s' }}></div>
+            </div>
+          </div>
+        </div>
+
+        {/* Animated main light beam from lamppost */}
+        <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-80 h-full">
+          <div 
+            className="w-full h-full opacity-15 blur-3xl animate-pulse"
+            style={{
+              background: `linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.1) 70%, transparent 100%)`,
+              animationDuration: '4s',
+            }}
+          ></div>
+        </div>
+
+        {/* Animated side lampposts */}
+        <div className="absolute top-10 right-20">
+          <div className="relative">
+            <Lamp className="w-10 h-10 text-white/80 animate-pulse" style={{ animationDuration: '3s' }} />
+            <div className="absolute -inset-4 bg-white/15 rounded-full blur-lg animate-ping" style={{ animationDuration: '4s' }}></div>
+          </div>
+        </div>
+
+        {/* Animated floating illuminated particles */}
+        <div className="absolute inset-0">
+          {[...Array(6)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute rounded-full bg-white/8 opacity-30 blur-xl animate-ping"
+              style={{
+                width: `${60 + i * 12}px`,
+                height: `${60 + i * 12}px`,
+                left: `${5 + i * 15}%`,
+                top: `${10 + i * 15}%`,
+                animationDelay: `${i * 0.6}s`,
+                animationDuration: `${3 + i * 0.4}s`,
+              }}
+            />
+          ))}
+        </div>
       </div>
 
       <div className="section-container">
-        <h2 className="section-title text-reveal">About Me</h2>
+        <h2 className="section-title text-reveal text-white drop-shadow-lg animate-pulse" style={{ animationDuration: '4s' }}>About Me</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="col-span-2">
-            <div className="glass-card about-card scroll-scale">
-              <h3 className="text-xl font-semibold mb-4 text-reveal">My Journey</h3>
-              <div className="space-y-4 text-muted-foreground">
+            <div className="bg-black/60 backdrop-blur-md border border-white/20 shadow-lg shadow-white/10 rounded-2xl p-6 about-card scroll-scale animate-pulse" style={{ animationDuration: '5s' }}>
+              <h3 className="text-xl font-semibold mb-4 text-reveal text-white">My Journey</h3>
+              <div className="space-y-4 text-gray-300">
                 <p className="text-reveal">
                   I'm a passionate software developer focused on creating elegant, user-friendly solutions to real-world problems. 
                   With expertise in both front-end and back-end technologies, I enjoy the full development process from concept to deployment.
@@ -32,22 +80,22 @@ const AboutSection = () => {
           </div>
 
           <div>
-            <div className="glass-card h-full flex flex-col justify-center about-card scroll-scale" style={{ animationDelay: '0.2s' }}>
-              <h3 className="text-xl font-semibold mb-4 text-reveal">Certifications</h3>
+            <div className="bg-black/60 backdrop-blur-md border border-white/20 shadow-lg shadow-white/10 rounded-2xl p-6 h-full flex flex-col justify-center about-card scroll-scale animate-pulse" style={{ animationDelay: '0.2s', animationDuration: '4s' }}>
+              <h3 className="text-xl font-semibold mb-4 text-reveal text-white">Certifications</h3>
               
               <div className="space-y-4">
-                <Card className="overflow-hidden hover-lift">
+                <Card className="overflow-hidden hover-lift bg-black/40 border-white/30">
                   <CardContent className="p-4 flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-md flex items-center justify-center bg-white shadow floating">
+                    <div className="w-10 h-10 rounded-md flex items-center justify-center bg-white/90 shadow floating">
                       <img src="/meta.jpg" alt="Meta Logo" className="w-6 h-6 object-contain" />
                     </div>
                     <div>
-                      <h4 className="font-medium text-reveal">Meta Front-End Developer</h4>
+                      <h4 className="font-medium text-reveal text-white">Meta Front-End Developer</h4>
                       <a
                         href="https://www.coursera.org/account/accomplishments/specialization/SAU2JSL6S75M"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-blue-600 text-sm transition duration-300 transform hover:underline hover:scale-105 hover:text-blue-800"
+                        className="text-gray-300 text-sm transition duration-300 transform hover:underline hover:scale-105 hover:text-white"
                       >
                         Certificate
                       </a>
@@ -55,18 +103,18 @@ const AboutSection = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="overflow-hidden hover-lift">
+                <Card className="overflow-hidden hover-lift bg-black/40 border-white/30">
                   <CardContent className="p-4 flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-md flex items-center justify-center bg-white shadow floating">
+                    <div className="w-10 h-10 rounded-md flex items-center justify-center bg-white/90 shadow floating">
                       <img src="/google.png" alt="Google Logo" className="w-6 h-6 object-contain" />
                     </div>
                     <div>
-                      <h4 className="font-medium text-reveal">Google Python Crash</h4>
+                      <h4 className="font-medium text-reveal text-white">Google Python Crash</h4>
                       <a
                         href="https://www.coursera.org/account/accomplishments/verify/635GP4PSHVEK"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-blue-600 text-sm transition duration-300 transform hover:underline hover:scale-105 hover:text-blue-800"
+                        className="text-gray-300 text-sm transition duration-300 transform hover:underline hover:scale-105 hover:text-white"
                       >
                         Certificate
                       </a>
