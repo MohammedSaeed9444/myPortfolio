@@ -29,49 +29,10 @@ const HeroSection: React.FC = () => {
   return (
     <React.Fragment>
       <section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-16 bg-black">
-        {/* Street Lamppost and Light Effect */}
+        {/* Mysterious Light Effects - No visible source */}
         <div className="absolute inset-0 -z-10">
-          {/* Main Street Lamppost */}
-          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-10">
-            <div className="relative">
-              {/* Lamppost base */}
-              <div className="w-6 h-4 bg-gradient-to-b from-gray-500 to-gray-700 mx-auto rounded-sm"></div>
-              
-              {/* Main pole */}
-              <div className="w-3 h-32 bg-gradient-to-b from-gray-400 via-gray-500 to-gray-600 mx-auto shadow-lg"></div>
-              
-              {/* Crossarm */}
-              <div className="relative -mt-1">
-                <div className="w-16 h-2 bg-gradient-to-r from-gray-500 via-gray-400 to-gray-500 mx-auto"></div>
-                
-                {/* Lamp fixture - lantern style */}
-                <div className="relative -mt-1 mx-auto w-12">
-                  {/* Top cap */}
-                  <div className="w-12 h-2 bg-gradient-to-b from-gray-300 to-gray-400 mx-auto rounded-t-lg"></div>
-                  
-                  {/* Main lantern body */}
-                  <div className="w-10 h-8 bg-gradient-to-b from-gray-200 to-gray-300 mx-auto border-x-2 border-gray-400 relative">
-                    {/* Glass panels effect */}
-                    <div className="absolute inset-1 bg-white/30 rounded-sm"></div>
-                    <div className="absolute inset-x-2 top-2 bottom-2 bg-white/50 rounded-sm"></div>
-                  </div>
-                  
-                  {/* Bottom cap */}
-                  <div className="w-10 h-2 bg-gradient-to-b from-gray-400 to-gray-500 mx-auto rounded-b-lg"></div>
-                  
-                  {/* Light source */}
-                  <div className="absolute inset-x-2 top-3 bottom-3 bg-white/90 rounded-sm animate-pulse shadow-lg shadow-white/50"></div>
-                  
-                  {/* Animated light glow */}
-                  <div className="absolute -inset-8 bg-white/30 rounded-full blur-2xl animate-pulse"></div>
-                  <div className="absolute -inset-12 bg-white/10 rounded-full blur-3xl animate-ping" style={{ animationDuration: '3s' }}></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Animated main vertical light beam from street lamp */}
-          <div className="absolute top-24 left-1/2 transform -translate-x-1/2 w-96 h-full animate-pulse" style={{ animationDuration: '4s' }}>
+          {/* Animated main vertical light beam from unknown source */}
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-96 h-full animate-pulse" style={{ animationDuration: '4s' }}>
             <div 
               className="w-full h-full opacity-20 blur-3xl light-sweep"
               style={{
@@ -81,7 +42,7 @@ const HeroSection: React.FC = () => {
           </div>
 
           {/* Animated secondary light beam - narrower */}
-          <div className="absolute top-24 left-1/2 transform -translate-x-1/2 w-48 h-full">
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-48 h-full">
             <div 
               className="w-full h-full opacity-30 blur-xl animate-bounce"
               style={{
@@ -92,11 +53,33 @@ const HeroSection: React.FC = () => {
           </div>
 
           {/* Animated core light beam - brightest */}
-          <div className="absolute top-24 left-1/2 transform -translate-x-1/2 w-24 h-full">
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-full">
             <div 
               className="w-full h-full opacity-40 blur-sm animate-pulse"
               style={{
                 background: `linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0.3) 80%, transparent 100%)`,
+                animationDuration: '2s',
+              }}
+            ></div>
+          </div>
+
+          {/* Side mysterious light sources */}
+          <div className="absolute top-0 left-20 w-32 h-full">
+            <div 
+              className="w-full h-full opacity-15 blur-2xl animate-pulse"
+              style={{
+                background: `linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%)`,
+                animationDuration: '3s',
+              }}
+            ></div>
+          </div>
+
+          <div className="absolute bottom-0 right-16 w-24 h-3/4">
+            <div 
+              className="w-full h-full opacity-10 blur-xl animate-pulse"
+              style={{
+                background: `linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.4) 30%, rgba(255, 255, 255, 0.2) 100%)`,
+                animationDelay: '1s',
                 animationDuration: '2s',
               }}
             ></div>
@@ -131,7 +114,7 @@ const HeroSection: React.FC = () => {
                   width: '2px',
                   height: '100%',
                   left: `${45 + i * 2}%`,
-                  top: '20%',
+                  top: '0%',
                   transform: `rotate(${-10 + i * 4}deg)`,
                   transformOrigin: 'top center',
                   animationDelay: `${i * 0.5}s`,
@@ -142,7 +125,7 @@ const HeroSection: React.FC = () => {
           </div>
 
           {/* Expanding light circles */}
-          <div className="absolute top-32 left-1/2 transform -translate-x-1/2">
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
             {Array.from({ length: 4 }, (_, i) => (
               <div
                 key={i}
@@ -151,8 +134,8 @@ const HeroSection: React.FC = () => {
                   width: `${80 + i * 40}px`,
                   height: `${80 + i * 40}px`,
                   left: '50%',
-                  top: '50%',
-                  transform: 'translate(-50%, -50%)',
+                  top: '0%',
+                  transform: 'translate(-50%, 0%)',
                   animationDelay: `${i * 0.8}s`,
                   animationDuration: `${4 + i * 0.5}s`,
                 }}
