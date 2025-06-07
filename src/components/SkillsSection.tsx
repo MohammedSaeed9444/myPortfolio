@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from 'react';
@@ -24,21 +25,22 @@ const skills: Skill[] = [
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="py-24 relative overflow-hidden">
+    <section id="skills" className="py-24 relative overflow-hidden skills-section">
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-70"></div>
-        <div className="absolute w-96 h-96 -top-48 -right-48 bg-blue-200 rounded-full blur-3xl opacity-20"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-70 parallax"></div>
+        <div className="absolute w-96 h-96 -top-48 -right-48 bg-blue-200 rounded-full blur-3xl opacity-20 floating"></div>
+        <div className="absolute w-80 h-80 bottom-12 left-24 bg-indigo-200 rounded-full blur-2xl opacity-15 scroll-rotate"></div>
       </div>
 
       <div className="section-container">
-        <h2 className="section-title">Skills & Technologies</h2>
+        <h2 className="section-title text-reveal">Skills & Technologies</h2>
 
-        <div className="glass p-8 rounded-2xl">
+        <div className="glass p-8 rounded-2xl scroll-scale">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {skills.map((skill, index) => (
               <div
                 key={skill.name}
-                className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/40 hover:bg-white/60 transition-all duration-300 hover:shadow-md group animate-fade-in"
+                className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/40 hover:bg-white/60 transition-all duration-300 hover:shadow-md group skill-item hover-lift"
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
                 <img
@@ -46,10 +48,10 @@ const SkillsSection = () => {
                   alt={skill.name}
                   width={40}
                   height={40}
-                  className="mb-3"
+                  className="mb-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3"
                 />
-                <span className="text-sm font-medium">{skill.name}</span>
-                <span className="text-xs text-muted-foreground">{skill.category}</span>
+                <span className="text-sm font-medium text-reveal">{skill.name}</span>
+                <span className="text-xs text-muted-foreground text-reveal">{skill.category}</span>
               </div>
             ))}
           </div>

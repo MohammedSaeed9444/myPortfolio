@@ -156,6 +156,37 @@
     }
   }
 
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.3) translateY(-50px);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05) translateY(-10px);
+    }
+    70% {
+      transform: scale(0.95) translateY(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes textReveal {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
   .animate-slide-in-left {
     animation: slideInLeft 0.6s ease-out forwards;
   }
@@ -168,9 +199,45 @@
     animation: rotateIn 0.8s ease-out forwards;
   }
 
-  /* Parallax elements */
+  .animate-bounce-in {
+    animation: bounceIn 0.8s ease-out forwards;
+  }
+
+  /* Scroll-based animations */
   .parallax {
     will-change: transform;
+  }
+
+  .floating {
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+  }
+
+  .scroll-scale {
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+  }
+
+  .scroll-rotate {
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+  }
+
+  .text-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(10px);
+    transition: all 0.6s ease-out;
+  }
+
+  .text-reveal.revealed {
+    animation: textReveal 0.8s ease-out forwards;
+  }
+
+  .scroll-progress {
+    height: 4px;
+    background: linear-gradient(90deg, #3B82F6, #8B5CF6, #EC4899);
+    transition: width 0.1s ease-out;
   }
 
   /* Hover effects */
@@ -196,6 +263,37 @@
   .stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
   .stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
   .stagger-animation > *:nth-child(6) { animation-delay: 0.6s; }
+
+  /* Section-specific animations */
+  .projects-section {
+    position: relative;
+  }
+
+  .skills-section {
+    position: relative;
+  }
+
+  .about-section {
+    position: relative;
+  }
+
+  .project-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+  }
+
+  .skill-item {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+    transition: all 0.6s ease-out;
+  }
+
+  .about-card {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.6s ease-out;
+  }
 }
 
 /* Remove space below footer */
