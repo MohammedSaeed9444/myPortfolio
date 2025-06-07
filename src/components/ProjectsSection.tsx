@@ -50,31 +50,64 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="py-24 relative overflow-hidden projects-section bg-black">
       <div className="absolute inset-0 -z-10">
-        {/* Lamp light effects */}
+        {/* Lamppost at the top */}
+        <div className="absolute top-10 left-1/2 transform -translate-x-1/2">
+          <div className="relative">
+            {/* Lamppost pole */}
+            <div className="w-2 h-20 bg-gradient-to-b from-gray-600 to-gray-800 mx-auto"></div>
+            {/* Lamp fixture */}
+            <div className="relative -mt-2">
+              <Lamp className="w-12 h-12 text-white drop-shadow-lg animate-pulse mx-auto" />
+              <div className="absolute -inset-6 bg-white/20 rounded-full blur-xl"></div>
+            </div>
+          </div>
+        </div>
+
+        {/* Main light beam from lamppost */}
+        <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-80 h-full">
+          <div 
+            className="w-full h-full opacity-15 blur-3xl"
+            style={{
+              background: `linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.1) 70%, transparent 100%)`,
+            }}
+          ></div>
+        </div>
+
+        {/* Secondary light beam */}
+        <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-40 h-full">
+          <div 
+            className="w-full h-full opacity-20 blur-xl"
+            style={{
+              background: `linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.2) 80%, transparent 100%)`,
+            }}
+          ></div>
+        </div>
+
+        {/* Side lampposts for additional lighting */}
         <div className="absolute top-10 left-20">
           <div className="relative">
-            <Lamp className="w-10 h-10 text-yellow-400 animate-pulse" />
-            <div className="absolute -inset-6 bg-yellow-400/20 rounded-full blur-xl"></div>
+            <Lamp className="w-10 h-10 text-white/80 animate-pulse" />
+            <div className="absolute -inset-4 bg-white/15 rounded-full blur-lg"></div>
           </div>
         </div>
         
         <div className="absolute bottom-20 right-16">
           <div className="relative">
-            <Lamp className="w-8 h-8 text-yellow-300 animate-pulse" style={{ animationDelay: '1s' }} />
-            <div className="absolute -inset-4 bg-yellow-300/15 rounded-full blur-lg"></div>
+            <Lamp className="w-8 h-8 text-white/70 animate-pulse" style={{ animationDelay: '1s' }} />
+            <div className="absolute -inset-4 bg-white/10 rounded-full blur-lg"></div>
           </div>
         </div>
 
         {/* Ambient lighting zones */}
-        <div className="absolute w-96 h-96 -top-48 -right-48 bg-yellow-200/10 rounded-full blur-3xl opacity-40 floating"></div>
-        <div className="absolute w-64 h-64 bottom-24 left-12 bg-yellow-300/10 rounded-full blur-2xl opacity-30 scroll-rotate"></div>
+        <div className="absolute w-96 h-96 -top-48 -right-48 bg-white/5 rounded-full blur-3xl opacity-40 floating"></div>
+        <div className="absolute w-64 h-64 bottom-24 left-12 bg-white/5 rounded-full blur-2xl opacity-30 scroll-rotate"></div>
         
         {/* Illuminated particles */}
         <div className="absolute inset-0">
           {[...Array(6)].map((_, i) => (
             <div
               key={i}
-              className="absolute rounded-full bg-yellow-400/10 opacity-30 blur-xl animate-pulse"
+              className="absolute rounded-full bg-white/8 opacity-30 blur-xl animate-pulse"
               style={{
                 width: `${80 + i * 15}px`,
                 height: `${80 + i * 15}px`,
@@ -89,9 +122,9 @@ const ProjectsSection = () => {
 
         {/* Light beam effects */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute w-48 h-48 border border-yellow-500/10 rotate-45 -top-24 -right-24 animate-spin" style={{ animationDuration: '25s' }}></div>
-          <div className="absolute w-32 h-32 border border-yellow-400/10 rotate-12 -bottom-16 -left-16 animate-ping" style={{ animationDuration: '5s' }}></div>
-          <div className="absolute w-24 h-24 bg-gradient-to-br from-yellow-500/5 to-yellow-400/5 rounded-full top-1/3 right-1/5 animate-bounce" style={{ animationDuration: '4s' }}></div>
+          <div className="absolute w-48 h-48 border border-white/10 rotate-45 -top-24 -right-24 animate-spin" style={{ animationDuration: '25s' }}></div>
+          <div className="absolute w-32 h-32 border border-white/10 rotate-12 -bottom-16 -left-16 animate-ping" style={{ animationDuration: '5s' }}></div>
+          <div className="absolute w-24 h-24 bg-gradient-to-br from-white/5 to-white/5 rounded-full top-1/3 right-1/5 animate-bounce" style={{ animationDuration: '4s' }}></div>
         </div>
       </div>
 
@@ -102,7 +135,7 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <div 
               key={project.id} 
-              className="bg-black/60 backdrop-blur-md border border-yellow-500/20 shadow-lg shadow-yellow-500/10 rounded-2xl p-6 transition-all duration-300 group project-card scroll-scale hover:shadow-2xl hover:shadow-yellow-500/20 hover:scale-105 hover:border-yellow-400/40"
+              className="bg-black/60 backdrop-blur-md border border-white/20 shadow-lg shadow-white/10 rounded-2xl p-6 transition-all duration-300 group project-card scroll-scale hover:shadow-2xl hover:shadow-white/20 hover:scale-105 hover:border-white/40"
               style={{ animationDelay: `${index * 0.2}s` }}
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
@@ -124,7 +157,7 @@ const ProjectsSection = () => {
                   <Badge 
                     key={tech} 
                     variant="outline" 
-                    className="border-yellow-500/40 text-yellow-300 hover:bg-yellow-500/10 animate-on-scroll"
+                    className="border-white/40 text-white/90 hover:bg-white/10 animate-on-scroll"
                     style={{ animationDelay: `${(index * 0.2) + (techIndex * 0.1)}s` }}
                   >
                     {tech}
@@ -133,13 +166,13 @@ const ProjectsSection = () => {
               </div>
               
               <div className="flex gap-3">
-                <Button variant="outline" size="sm" asChild className="hover-lift border-yellow-500/40 text-yellow-300 hover:bg-yellow-500/10">
+                <Button variant="outline" size="sm" asChild className="hover-lift border-white/40 text-white/90 hover:bg-white/10">
                   <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                     <Github className="mr-2 h-4 w-4" />
                     Code
                   </a>
                 </Button>
-                <Button size="sm" asChild className="hover-lift bg-gradient-to-r from-yellow-600 to-yellow-500 hover:from-yellow-500 hover:to-yellow-400 text-black">
+                <Button size="sm" asChild className="hover-lift bg-gradient-to-r from-white/90 to-white/80 hover:from-white hover:to-white/90 text-black">
                   <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-2 h-4 w-4" />
                     Demo

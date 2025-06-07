@@ -30,48 +30,72 @@ const HeroSection: React.FC = () => {
   return (
     <React.Fragment>
       <section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-16 bg-black">
-        {/* Lamp Light Effect */}
+        {/* Lamppost and Light Beam Effect */}
         <div className="absolute inset-0 -z-10">
-          {/* Main lamp spotlight following mouse */}
-          <div 
-            className="absolute w-96 h-96 rounded-full opacity-20 blur-3xl transition-all duration-300 ease-out"
-            style={{
-              background: `radial-gradient(circle, rgba(255, 255, 100, 0.4) 0%, rgba(255, 255, 255, 0.2) 30%, transparent 70%)`,
-              left: `${mousePosition.x - 192}px`,
-              top: `${mousePosition.y - 192}px`,
-              transform: 'translate3d(0, 0, 0)',
-            }}
-          ></div>
-          
-          {/* Secondary ambient light */}
+          {/* Lamppost at the top center */}
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-10">
+            <div className="relative">
+              {/* Lamppost pole */}
+              <div className="w-2 h-32 bg-gradient-to-b from-gray-600 to-gray-800 mx-auto"></div>
+              {/* Lamp fixture */}
+              <div className="relative -mt-2">
+                <Lamp className="w-16 h-16 text-yellow-200 drop-shadow-2xl mx-auto animate-pulse" />
+                <div className="absolute -inset-8 bg-white/30 rounded-full blur-2xl"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Main vertical light beam from lamppost */}
+          <div className="absolute top-24 left-1/2 transform -translate-x-1/2 w-96 h-full">
+            <div 
+              className="w-full h-full opacity-20 blur-3xl"
+              style={{
+                background: `linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 30%, rgba(255, 255, 255, 0.2) 60%, transparent 100%)`,
+              }}
+            ></div>
+          </div>
+
+          {/* Secondary light beam - narrower */}
+          <div className="absolute top-24 left-1/2 transform -translate-x-1/2 w-48 h-full">
+            <div 
+              className="w-full h-full opacity-30 blur-xl"
+              style={{
+                background: `linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0.2) 70%, transparent 100%)`,
+              }}
+            ></div>
+          </div>
+
+          {/* Core light beam - brightest */}
+          <div className="absolute top-24 left-1/2 transform -translate-x-1/2 w-24 h-full">
+            <div 
+              className="w-full h-full opacity-40 blur-sm"
+              style={{
+                background: `linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0.3) 80%, transparent 100%)`,
+              }}
+            ></div>
+          </div>
+
+          {/* Subtle mouse-following ambient light */}
           <div 
             className="absolute w-64 h-64 rounded-full opacity-10 blur-2xl transition-all duration-500"
             style={{
-              background: `radial-gradient(circle, rgba(255, 255, 200, 0.3) 0%, transparent 60%)`,
+              background: `radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 60%)`,
               left: `${mousePosition.x - 128}px`,
               top: `${mousePosition.y - 128}px`,
             }}
           ></div>
 
-          {/* Static lamp fixture */}
-          <div className="absolute top-10 right-20">
-            <div className="relative">
-              <Lamp className="w-12 h-12 text-yellow-400 drop-shadow-lg animate-pulse" />
-              <div className="absolute -inset-4 bg-yellow-400/20 rounded-full blur-xl"></div>
-            </div>
-          </div>
-
           {/* Floating illuminated particles */}
           <div className="absolute inset-0">
-            {Array.from({ length: 6 }, (_, i) => (
+            {Array.from({ length: 8 }, (_, i) => (
               <div
                 key={i}
-                className="absolute rounded-full bg-yellow-200/10 blur-sm animate-pulse"
+                className="absolute rounded-full bg-white/10 blur-sm animate-pulse"
                 style={{
-                  width: `${20 + i * 10}px`,
-                  height: `${20 + i * 10}px`,
-                  left: `${20 + i * 15}%`,
-                  top: `${30 + i * 8}%`,
+                  width: `${15 + i * 8}px`,
+                  height: `${15 + i * 8}px`,
+                  left: `${10 + i * 12}%`,
+                  top: `${40 + i * 8}%`,
                   animationDelay: `${i * 0.8}s`,
                   animationDuration: `${3 + i * 0.5}s`,
                 }}
