@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Code, Sparkles, Zap, Lamp } from 'lucide-react';
+import { ArrowRight, Code, Sparkles, Zap } from 'lucide-react';
 
 const HeroSection: React.FC = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -29,30 +29,53 @@ const HeroSection: React.FC = () => {
   return (
     <React.Fragment>
       <section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-16 bg-black">
-        {/* Animated Lamppost and Light Beam Effect */}
+        {/* Street Lamppost and Light Effect */}
         <div className="absolute inset-0 -z-10">
-          {/* Lamppost at the top center */}
+          {/* Main Street Lamppost */}
           <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-10">
             <div className="relative">
-              {/* Lamppost pole */}
-              <div className="w-2 h-32 bg-gradient-to-b from-gray-400 to-gray-600 mx-auto"></div>
-              {/* Animated Lamp fixture */}
-              <div className="relative -mt-2">
-                <Lamp className="w-16 h-16 text-white drop-shadow-2xl mx-auto animate-pulse" />
-                <div className="absolute -inset-8 bg-white/30 rounded-full blur-2xl animate-pulse"></div>
-                {/* Flickering light effect */}
-                <div className="absolute -inset-12 bg-white/10 rounded-full blur-3xl animate-ping" style={{ animationDuration: '3s' }}></div>
+              {/* Lamppost base */}
+              <div className="w-6 h-4 bg-gradient-to-b from-gray-500 to-gray-700 mx-auto rounded-sm"></div>
+              
+              {/* Main pole */}
+              <div className="w-3 h-32 bg-gradient-to-b from-gray-400 via-gray-500 to-gray-600 mx-auto shadow-lg"></div>
+              
+              {/* Crossarm */}
+              <div className="relative -mt-1">
+                <div className="w-16 h-2 bg-gradient-to-r from-gray-500 via-gray-400 to-gray-500 mx-auto"></div>
+                
+                {/* Lamp fixture - lantern style */}
+                <div className="relative -mt-1 mx-auto w-12">
+                  {/* Top cap */}
+                  <div className="w-12 h-2 bg-gradient-to-b from-gray-300 to-gray-400 mx-auto rounded-t-lg"></div>
+                  
+                  {/* Main lantern body */}
+                  <div className="w-10 h-8 bg-gradient-to-b from-gray-200 to-gray-300 mx-auto border-x-2 border-gray-400 relative">
+                    {/* Glass panels effect */}
+                    <div className="absolute inset-1 bg-white/30 rounded-sm"></div>
+                    <div className="absolute inset-x-2 top-2 bottom-2 bg-white/50 rounded-sm"></div>
+                  </div>
+                  
+                  {/* Bottom cap */}
+                  <div className="w-10 h-2 bg-gradient-to-b from-gray-400 to-gray-500 mx-auto rounded-b-lg"></div>
+                  
+                  {/* Light source */}
+                  <div className="absolute inset-x-2 top-3 bottom-3 bg-white/90 rounded-sm animate-pulse shadow-lg shadow-white/50"></div>
+                  
+                  {/* Animated light glow */}
+                  <div className="absolute -inset-8 bg-white/30 rounded-full blur-2xl animate-pulse"></div>
+                  <div className="absolute -inset-12 bg-white/10 rounded-full blur-3xl animate-ping" style={{ animationDuration: '3s' }}></div>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Animated main vertical light beam from lamppost */}
+          {/* Animated main vertical light beam from street lamp */}
           <div className="absolute top-24 left-1/2 transform -translate-x-1/2 w-96 h-full animate-pulse" style={{ animationDuration: '4s' }}>
             <div 
-              className="w-full h-full opacity-20 blur-3xl"
+              className="w-full h-full opacity-20 blur-3xl light-sweep"
               style={{
                 background: `linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 30%, rgba(255, 255, 255, 0.2) 60%, transparent 100%)`,
-                animation: 'lightSweep 6s ease-in-out infinite',
               }}
             ></div>
           </div>

@@ -1,22 +1,36 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Mail, Linkedin, Github, Lamp } from 'lucide-react';
+import { Mail, Linkedin, Github } from 'lucide-react';
 
 const ContactSection = () => {
   return (
     <section id="contact" className="py-24 relative overflow-hidden bg-black">
       <div className="absolute inset-0 -z-10">
-        {/* Animated Lamppost at the top */}
+        {/* Street Lamppost */}
         <div className="absolute top-10 left-1/2 transform -translate-x-1/2">
           <div className="relative">
-            {/* Lamppost pole */}
-            <div className="w-2 h-20 bg-gradient-to-b from-gray-400 to-gray-600 mx-auto"></div>
-            {/* Animated Lamp fixture */}
-            <div className="relative -mt-2">
-              <Lamp className="w-12 h-12 text-white drop-shadow-lg animate-pulse mx-auto" />
-              <div className="absolute -inset-6 bg-white/20 rounded-full blur-xl animate-ping" style={{ animationDuration: '3s' }}></div>
-              <div className="absolute -inset-8 bg-white/10 rounded-full blur-2xl animate-pulse" style={{ animationDuration: '5s' }}></div>
+            {/* Lamppost base */}
+            <div className="w-6 h-4 bg-gradient-to-b from-gray-500 to-gray-700 mx-auto rounded-sm"></div>
+            
+            {/* Main pole */}
+            <div className="w-3 h-20 bg-gradient-to-b from-gray-400 via-gray-500 to-gray-600 mx-auto shadow-lg"></div>
+            
+            {/* Crossarm */}
+            <div className="relative -mt-1">
+              <div className="w-16 h-2 bg-gradient-to-r from-gray-500 via-gray-400 to-gray-500 mx-auto"></div>
+              
+              {/* Street lamp fixture */}
+              <div className="relative -mt-1 mx-auto w-12">
+                <div className="w-12 h-2 bg-gradient-to-b from-gray-300 to-gray-400 mx-auto rounded-t-lg"></div>
+                <div className="w-10 h-8 bg-gradient-to-b from-gray-200 to-gray-300 mx-auto border-x-2 border-gray-400 relative">
+                  <div className="absolute inset-1 bg-white/30 rounded-sm"></div>
+                  <div className="absolute inset-x-2 top-2 bottom-2 bg-white/50 rounded-sm"></div>
+                </div>
+                <div className="w-10 h-2 bg-gradient-to-b from-gray-400 to-gray-500 mx-auto rounded-b-lg"></div>
+                <div className="absolute inset-x-2 top-3 bottom-3 bg-white/90 rounded-sm animate-pulse shadow-lg shadow-white/50"></div>
+                <div className="absolute -inset-6 bg-white/20 rounded-full blur-xl animate-ping" style={{ animationDuration: '3s' }}></div>
+                <div className="absolute -inset-8 bg-white/10 rounded-full blur-2xl animate-pulse" style={{ animationDuration: '5s' }}></div>
+              </div>
             </div>
           </div>
         </div>
@@ -35,7 +49,16 @@ const ContactSection = () => {
         {/* Animated side lampposts */}
         <div className="absolute top-10 right-20">
           <div className="relative">
-            <Lamp className="w-10 h-10 text-white/80 animate-pulse" style={{ animationDuration: '3s' }} />
+            <div className="w-5 h-3 bg-gradient-to-b from-gray-500 to-gray-700 mx-auto rounded-sm"></div>
+            <div className="w-2 h-14 bg-gradient-to-b from-gray-400 to-gray-600 mx-auto"></div>
+            <div className="relative -mt-1 mx-auto w-8">
+              <div className="w-8 h-1 bg-gradient-to-b from-gray-300 to-gray-400 mx-auto rounded-t"></div>
+              <div className="w-7 h-6 bg-gradient-to-b from-gray-200 to-gray-300 mx-auto border border-gray-400 relative">
+                <div className="absolute inset-1 bg-white/30 rounded-sm"></div>
+              </div>
+              <div className="w-7 h-1 bg-gradient-to-b from-gray-400 to-gray-500 mx-auto rounded-b"></div>
+              <div className="absolute inset-x-1 top-2 bottom-2 bg-white/80 rounded-sm animate-pulse" style={{ animationDuration: '3s' }}></div>
+            </div>
             <div className="absolute -inset-4 bg-white/15 rounded-full blur-lg animate-ping" style={{ animationDuration: '4s' }}></div>
           </div>
         </div>
