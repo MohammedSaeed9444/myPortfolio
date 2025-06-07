@@ -187,6 +187,42 @@
     }
   }
 
+  /* New animated light effects */
+  @keyframes lightSweep {
+    0% {
+      opacity: 0.1;
+      transform: scaleY(0.8);
+    }
+    50% {
+      opacity: 0.3;
+      transform: scaleY(1.1);
+    }
+    100% {
+      opacity: 0.1;
+      transform: scaleY(0.8);
+    }
+  }
+
+  @keyframes lightFlicker {
+    0%, 100% {
+      opacity: 1;
+      filter: brightness(1);
+    }
+    50% {
+      opacity: 0.8;
+      filter: brightness(1.2);
+    }
+  }
+
+  @keyframes lightPulse {
+    0%, 100% {
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.2), 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+    50% {
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.2);
+    }
+  }
+
   .animate-slide-in-left {
     animation: slideInLeft 0.6s ease-out forwards;
   }
@@ -203,7 +239,19 @@
     animation: bounceIn 0.8s ease-out forwards;
   }
 
-  /* Scroll-based animations */
+  .animate-light-sweep {
+    animation: lightSweep 6s ease-in-out infinite;
+  }
+
+  .animate-light-flicker {
+    animation: lightFlicker 2s ease-in-out infinite;
+  }
+
+  .animate-light-pulse {
+    animation: lightPulse 3s ease-in-out infinite;
+  }
+
+  /* ... keep existing code (scroll-based animations and other styles) */
   .parallax {
     will-change: transform;
   }
