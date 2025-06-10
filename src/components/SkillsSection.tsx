@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from 'react';
@@ -26,22 +25,8 @@ const SkillsSection = () => {
   return (
     <section id="skills" className="py-24 relative overflow-hidden skills-section bg-black">
       <div className="absolute inset-0 -z-10">
-        {/* Animated Lamppost at the top */}
-        <div className="absolute top-10 left-1/2 transform -translate-x-1/2">
-          <div className="relative">
-            {/* Lamppost pole */}
-            <div className="w-2 h-20 bg-gradient-to-b from-gray-400 to-gray-600 mx-auto"></div>
-            {/* Animated Lamp fixture */}
-            <div className="relative -mt-2">
-              <Lamp className="w-12 h-12 text-white drop-shadow-lg animate-pulse mx-auto" />
-              <div className="absolute -inset-6 bg-white/20 rounded-full blur-xl animate-ping" style={{ animationDuration: '3s' }}></div>
-              <div className="absolute -inset-8 bg-white/10 rounded-full blur-2xl animate-pulse" style={{ animationDuration: '5s' }}></div>
-            </div>
-          </div>
-        </div>
-
-        {/* Animated main light beam */}
-        <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-80 h-full">
+        {/* Mysterious Light Effects - No visible source */}
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-80 h-full">
           <div 
             className="w-full h-full opacity-15 blur-3xl animate-pulse"
             style={{
@@ -51,19 +36,26 @@ const SkillsSection = () => {
           ></div>
         </div>
 
-        {/* Animated side lampposts */}
-        <div className="absolute top-10 left-20">
-          <div className="relative">
-            <Lamp className="w-10 h-10 text-white/80 animate-pulse" style={{ animationDuration: '3s' }} />
-            <div className="absolute -inset-4 bg-white/15 rounded-full blur-lg animate-ping" style={{ animationDuration: '4s' }}></div>
-          </div>
+        {/* Side mysterious light sources */}
+        <div className="absolute top-0 left-20 w-32 h-full">
+          <div 
+            className="w-full h-full opacity-15 blur-2xl animate-pulse"
+            style={{
+              background: `linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%)`,
+              animationDuration: '3s',
+            }}
+          ></div>
         </div>
         
-        <div className="absolute bottom-20 right-16">
-          <div className="relative">
-            <Lamp className="w-8 h-8 text-white/70 animate-pulse" style={{ animationDelay: '1s', animationDuration: '2s' }} />
-            <div className="absolute -inset-4 bg-white/10 rounded-full blur-lg animate-ping" style={{ animationDuration: '5s' }}></div>
-          </div>
+        <div className="absolute bottom-0 right-16 w-24 h-3/4">
+          <div 
+            className="w-full h-full opacity-10 blur-xl animate-pulse"
+            style={{
+              background: `linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.4) 30%, rgba(255, 255, 255, 0.2) 100%)`,
+              animationDelay: '1s',
+              animationDuration: '2s',
+            }}
+          ></div>
         </div>
 
         {/* Animated floating particles */}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Code, Sparkles, Zap, Lamp } from 'lucide-react';
+import { ArrowRight, Code, Sparkles, Zap } from 'lucide-react';
 
 const HeroSection: React.FC = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -29,36 +29,20 @@ const HeroSection: React.FC = () => {
   return (
     <React.Fragment>
       <section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-16 bg-black">
-        {/* Animated Lamppost and Light Beam Effect */}
+        {/* Mysterious Light Effects - No visible source */}
         <div className="absolute inset-0 -z-10">
-          {/* Lamppost at the top center */}
-          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-10">
-            <div className="relative">
-              {/* Lamppost pole */}
-              <div className="w-2 h-32 bg-gradient-to-b from-gray-400 to-gray-600 mx-auto"></div>
-              {/* Animated Lamp fixture */}
-              <div className="relative -mt-2">
-                <Lamp className="w-16 h-16 text-white drop-shadow-2xl mx-auto animate-pulse" />
-                <div className="absolute -inset-8 bg-white/30 rounded-full blur-2xl animate-pulse"></div>
-                {/* Flickering light effect */}
-                <div className="absolute -inset-12 bg-white/10 rounded-full blur-3xl animate-ping" style={{ animationDuration: '3s' }}></div>
-              </div>
-            </div>
-          </div>
-
-          {/* Animated main vertical light beam from lamppost */}
-          <div className="absolute top-24 left-1/2 transform -translate-x-1/2 w-96 h-full animate-pulse" style={{ animationDuration: '4s' }}>
+          {/* Animated main vertical light beam from unknown source */}
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-96 h-full animate-pulse" style={{ animationDuration: '4s' }}>
             <div 
-              className="w-full h-full opacity-20 blur-3xl"
+              className="w-full h-full opacity-20 blur-3xl light-sweep"
               style={{
                 background: `linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 30%, rgba(255, 255, 255, 0.2) 60%, transparent 100%)`,
-                animation: 'lightSweep 6s ease-in-out infinite',
               }}
             ></div>
           </div>
 
           {/* Animated secondary light beam - narrower */}
-          <div className="absolute top-24 left-1/2 transform -translate-x-1/2 w-48 h-full">
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-48 h-full">
             <div 
               className="w-full h-full opacity-30 blur-xl animate-bounce"
               style={{
@@ -69,11 +53,33 @@ const HeroSection: React.FC = () => {
           </div>
 
           {/* Animated core light beam - brightest */}
-          <div className="absolute top-24 left-1/2 transform -translate-x-1/2 w-24 h-full">
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-full">
             <div 
               className="w-full h-full opacity-40 blur-sm animate-pulse"
               style={{
                 background: `linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0.3) 80%, transparent 100%)`,
+                animationDuration: '2s',
+              }}
+            ></div>
+          </div>
+
+          {/* Side mysterious light sources */}
+          <div className="absolute top-0 left-20 w-32 h-full">
+            <div 
+              className="w-full h-full opacity-15 blur-2xl animate-pulse"
+              style={{
+                background: `linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%)`,
+                animationDuration: '3s',
+              }}
+            ></div>
+          </div>
+
+          <div className="absolute bottom-0 right-16 w-24 h-3/4">
+            <div 
+              className="w-full h-full opacity-10 blur-xl animate-pulse"
+              style={{
+                background: `linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.4) 30%, rgba(255, 255, 255, 0.2) 100%)`,
+                animationDelay: '1s',
                 animationDuration: '2s',
               }}
             ></div>
@@ -108,7 +114,7 @@ const HeroSection: React.FC = () => {
                   width: '2px',
                   height: '100%',
                   left: `${45 + i * 2}%`,
-                  top: '20%',
+                  top: '0%',
                   transform: `rotate(${-10 + i * 4}deg)`,
                   transformOrigin: 'top center',
                   animationDelay: `${i * 0.5}s`,
@@ -119,7 +125,7 @@ const HeroSection: React.FC = () => {
           </div>
 
           {/* Expanding light circles */}
-          <div className="absolute top-32 left-1/2 transform -translate-x-1/2">
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
             {Array.from({ length: 4 }, (_, i) => (
               <div
                 key={i}
@@ -128,8 +134,8 @@ const HeroSection: React.FC = () => {
                   width: `${80 + i * 40}px`,
                   height: `${80 + i * 40}px`,
                   left: '50%',
-                  top: '50%',
-                  transform: 'translate(-50%, -50%)',
+                  top: '0%',
+                  transform: 'translate(-50%, 0%)',
                   animationDelay: `${i * 0.8}s`,
                   animationDuration: `${4 + i * 0.5}s`,
                 }}

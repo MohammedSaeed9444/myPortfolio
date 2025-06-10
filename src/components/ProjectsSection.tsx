@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Github, ExternalLink, Lamp } from 'lucide-react';
+import { Github, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 interface Project {
@@ -50,22 +49,8 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="py-24 relative overflow-hidden projects-section bg-black">
       <div className="absolute inset-0 -z-10">
-        {/* Animated Lamppost at the top */}
-        <div className="absolute top-10 left-1/2 transform -translate-x-1/2">
-          <div className="relative">
-            {/* Lamppost pole */}
-            <div className="w-2 h-20 bg-gradient-to-b from-gray-400 to-gray-600 mx-auto"></div>
-            {/* Animated Lamp fixture */}
-            <div className="relative -mt-2">
-              <Lamp className="w-12 h-12 text-white drop-shadow-lg animate-pulse mx-auto" />
-              <div className="absolute -inset-6 bg-white/20 rounded-full blur-xl animate-ping" style={{ animationDuration: '3s' }}></div>
-              <div className="absolute -inset-8 bg-white/10 rounded-full blur-2xl animate-pulse" style={{ animationDuration: '5s' }}></div>
-            </div>
-          </div>
-        </div>
-
-        {/* Animated main light beam from lamppost */}
-        <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-80 h-full">
+        {/* Mysterious Light Effects - No visible source */}
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-80 h-full">
           <div 
             className="w-full h-full opacity-15 blur-3xl animate-pulse"
             style={{
@@ -76,7 +61,7 @@ const ProjectsSection = () => {
         </div>
 
         {/* Animated secondary light beam */}
-        <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-40 h-full">
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-40 h-full">
           <div 
             className="w-full h-full opacity-20 blur-xl animate-bounce"
             style={{
@@ -86,19 +71,26 @@ const ProjectsSection = () => {
           ></div>
         </div>
 
-        {/* Animated side lampposts for additional lighting */}
-        <div className="absolute top-10 left-20">
-          <div className="relative">
-            <Lamp className="w-10 h-10 text-white/80 animate-pulse" style={{ animationDuration: '3s' }} />
-            <div className="absolute -inset-4 bg-white/15 rounded-full blur-lg animate-ping" style={{ animationDuration: '4s' }}></div>
-          </div>
+        {/* Side mysterious light sources */}
+        <div className="absolute top-0 left-20 w-32 h-full">
+          <div 
+            className="w-full h-full opacity-15 blur-2xl animate-pulse"
+            style={{
+              background: `linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%)`,
+              animationDuration: '4s',
+            }}
+          ></div>
         </div>
         
-        <div className="absolute bottom-20 right-16">
-          <div className="relative">
-            <Lamp className="w-8 h-8 text-white/70 animate-pulse" style={{ animationDelay: '1s', animationDuration: '2s' }} />
-            <div className="absolute -inset-4 bg-white/10 rounded-full blur-lg animate-ping" style={{ animationDuration: '5s' }}></div>
-          </div>
+        <div className="absolute bottom-0 right-16 w-24 h-3/4">
+          <div 
+            className="w-full h-full opacity-10 blur-xl animate-pulse"
+            style={{
+              background: `linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.4) 30%, rgba(255, 255, 255, 0.2) 100%)`,
+              animationDelay: '1s',
+              animationDuration: '5s',
+            }}
+          ></div>
         </div>
 
         {/* Animated ambient lighting zones */}
@@ -138,7 +130,7 @@ const ProjectsSection = () => {
                 width: '1px',
                 height: '60%',
                 left: `${40 + i * 5}%`,
-                top: '15%',
+                top: '0%',
                 transform: `rotate(${-15 + i * 6}deg)`,
                 transformOrigin: 'top center',
                 animationDelay: `${i * 0.4}s`,
@@ -149,7 +141,7 @@ const ProjectsSection = () => {
         </div>
 
         {/* Expanding animated light circles */}
-        <div className="absolute top-24 left-1/2 transform -translate-x-1/2">
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
           {Array.from({ length: 3 }, (_, i) => (
             <div
               key={i}
@@ -158,8 +150,8 @@ const ProjectsSection = () => {
                 width: `${100 + i * 50}px`,
                 height: `${100 + i * 50}px`,
                 left: '50%',
-                top: '50%',
-                transform: 'translate(-50%, -50%)',
+                top: '0%',
+                transform: 'translate(-50%, 0%)',
                 animationDelay: `${i * 1.2}s`,
                 animationDuration: `${5 + i * 0.5}s`,
               }}
@@ -190,7 +182,6 @@ const ProjectsSection = () => {
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
-                {/* Animated overlay effect */}
                 <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
               </div>
               
