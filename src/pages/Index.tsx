@@ -1,5 +1,5 @@
+
 import React, { useEffect } from 'react';
-import { useTheme } from '@/contexts/ThemeContext';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import ProjectsSection from '@/components/ProjectsSection';
@@ -9,8 +9,6 @@ import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
-  const { isDayMode } = useTheme();
-
   useEffect(() => {
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
       entries.forEach(entry => {
@@ -140,21 +138,15 @@ const Index = () => {
     };
   }, []);
 
-  const backgroundClass = isDayMode 
-    ? 'bg-gradient-to-br from-green-50 via-blue-50 to-purple-50' 
-    : 'bg-black';
-
   return (
-    <div className={`min-h-screen overflow-x-hidden scroll-smooth ${backgroundClass}`}>
+    <div className="min-h-screen overflow-x-hidden scroll-smooth">
       <Navbar />
-      <div className="space-y-0">
-        <HeroSection />
-        <ProjectsSection />
-        <AboutSection />
-        <SkillsSection />
-        <ContactSection />
-        <Footer />
-      </div>
+      <HeroSection />
+      <ProjectsSection />
+      <AboutSection />
+      <SkillsSection />
+      <ContactSection />
+      <Footer />
     </div>
   );
 };

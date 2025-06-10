@@ -1,67 +1,24 @@
+
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { useTheme } from '@/contexts/ThemeContext';
 
 const AboutSection = () => {
-  const { isDayMode } = useTheme();
-
-  const sectionBg = isDayMode ? 'bg-gradient-to-br from-purple-50 via-blue-50 to-green-50' : 'bg-black';
-  const textColor = isDayMode ? 'text-gray-900' : 'text-white';
-  const cardBg = isDayMode ? 'bg-white/80 border border-gray-200' : 'bg-black/60 border border-white/20';
-  const lightEffects = !isDayMode;
-
   return (
-    <section id="about" className={`py-0 relative overflow-hidden about-section ${sectionBg}`}>
-      {lightEffects && (
-        <div className="absolute inset-0 -z-10">
-          {/* Mysterious Light Effects - No visible source */}
-          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-80 h-full">
-            <div 
-              className="w-full h-full opacity-15 blur-3xl animate-pulse"
-              style={{
-                background: `linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.1) 70%, transparent 100%)`,
-                animationDuration: '4s',
-              }}
-            ></div>
-          </div>
-
-          <div className="absolute top-0 right-20 w-32 h-full">
-            <div 
-              className="w-full h-full opacity-15 blur-2xl animate-pulse"
-              style={{
-                background: `linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%)`,
-                animationDuration: '4s',
-              }}
-            ></div>
-          </div>
-
-          <div className="absolute inset-0">
-            {[...Array(6)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute rounded-full bg-white/8 opacity-30 blur-xl animate-ping"
-                style={{
-                  width: `${60 + i * 12}px`,
-                  height: `${60 + i * 12}px`,
-                  left: `${5 + i * 15}%`,
-                  top: `${10 + i * 15}%`,
-                  animationDelay: `${i * 0.6}s`,
-                  animationDuration: `${3 + i * 0.4}s`,
-                }}
-              />
-            ))}
-          </div>
-        </div>
-      )}
+    <section id="about" className="py-24 relative about-section">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-white opacity-80 parallax"></div>
+        <div className="absolute w-96 h-96 -bottom-48 -left-48 bg-blue-200 rounded-full blur-3xl opacity-20 floating"></div>
+        <div className="absolute w-72 h-72 top-24 right-12 bg-purple-200 rounded-full blur-2xl opacity-10 scroll-rotate"></div>
+      </div>
 
       <div className="section-container">
-        <h2 className={`section-title text-reveal drop-shadow-lg animate-pulse ${textColor}`} style={{ animationDuration: '4s' }}>About Me</h2>
+        <h2 className="section-title text-reveal">About Me</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="col-span-2">
-            <div className={`${cardBg} backdrop-blur-md shadow-lg ${isDayMode ? 'shadow-gray-200/50' : 'shadow-white/10'} rounded-2xl p-6 about-card scroll-scale animate-pulse`} style={{ animationDuration: '5s' }}>
-              <h3 className={`text-xl font-semibold mb-4 text-reveal ${textColor}`}>My Journey</h3>
-              <div className={`space-y-4 ${isDayMode ? 'text-gray-700' : 'text-gray-300'}`}>
+            <div className="glass-card about-card scroll-scale">
+              <h3 className="text-xl font-semibold mb-4 text-reveal">My Journey</h3>
+              <div className="space-y-4 text-muted-foreground">
                 <p className="text-reveal">
                   I'm a passionate software developer focused on creating elegant, user-friendly solutions to real-world problems. 
                   With expertise in both front-end and back-end technologies, I enjoy the full development process from concept to deployment.
@@ -75,22 +32,22 @@ const AboutSection = () => {
           </div>
 
           <div>
-            <div className={`${cardBg} backdrop-blur-md shadow-lg ${isDayMode ? 'shadow-gray-200/50' : 'shadow-white/10'} rounded-2xl p-6 h-full flex flex-col justify-center about-card scroll-scale animate-pulse`} style={{ animationDelay: '0.2s', animationDuration: '4s' }}>
-              <h3 className={`text-xl font-semibold mb-4 text-reveal ${textColor}`}>Certifications</h3>
+            <div className="glass-card h-full flex flex-col justify-center about-card scroll-scale" style={{ animationDelay: '0.2s' }}>
+              <h3 className="text-xl font-semibold mb-4 text-reveal">Certifications</h3>
               
               <div className="space-y-4">
-                <Card className={`overflow-hidden hover-lift ${isDayMode ? 'bg-gray-50 border-gray-200' : 'bg-black/40 border-white/30'}`}>
+                <Card className="overflow-hidden hover-lift">
                   <CardContent className="p-4 flex items-center gap-3">
-                    <div className={`w-10 h-10 rounded-md flex items-center justify-center ${isDayMode ? 'bg-white' : 'bg-white/90'} shadow floating`}>
+                    <div className="w-10 h-10 rounded-md flex items-center justify-center bg-white shadow floating">
                       <img src="/meta.jpg" alt="Meta Logo" className="w-6 h-6 object-contain" />
                     </div>
                     <div>
-                      <h4 className={`font-medium text-reveal ${textColor}`}>Meta Front-End Developer</h4>
+                      <h4 className="font-medium text-reveal">Meta Front-End Developer</h4>
                       <a
                         href="https://www.coursera.org/account/accomplishments/specialization/SAU2JSL6S75M"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`text-sm transition duration-300 transform hover:underline hover:scale-105 ${isDayMode ? 'text-blue-600 hover:text-blue-800' : 'text-gray-300 hover:text-white'}`}
+                        className="text-blue-600 text-sm transition duration-300 transform hover:underline hover:scale-105 hover:text-blue-800"
                       >
                         Certificate
                       </a>
@@ -98,18 +55,18 @@ const AboutSection = () => {
                   </CardContent>
                 </Card>
 
-                <Card className={`overflow-hidden hover-lift ${isDayMode ? 'bg-gray-50 border-gray-200' : 'bg-black/40 border-white/30'}`}>
+                <Card className="overflow-hidden hover-lift">
                   <CardContent className="p-4 flex items-center gap-3">
-                    <div className={`w-10 h-10 rounded-md flex items-center justify-center ${isDayMode ? 'bg-white' : 'bg-white/90'} shadow floating`}>
+                    <div className="w-10 h-10 rounded-md flex items-center justify-center bg-white shadow floating">
                       <img src="/google.png" alt="Google Logo" className="w-6 h-6 object-contain" />
                     </div>
                     <div>
-                      <h4 className={`font-medium text-reveal ${textColor}`}>Google Python Crash</h4>
+                      <h4 className="font-medium text-reveal">Google Python Crash</h4>
                       <a
                         href="https://www.coursera.org/account/accomplishments/verify/635GP4PSHVEK"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`text-sm transition duration-300 transform hover:underline hover:scale-105 ${isDayMode ? 'text-blue-600 hover:text-blue-800' : 'text-gray-300 hover:text-white'}`}
+                        className="text-blue-600 text-sm transition duration-300 transform hover:underline hover:scale-105 hover:text-blue-800"
                       >
                         Certificate
                       </a>
