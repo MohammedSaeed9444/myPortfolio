@@ -53,12 +53,10 @@ const AboutSection = () => {
               <h3 className="text-xl font-semibold mb-4 text-reveal text-white">My Journey</h3>
               <div className="space-y-4 text-gray-300">
                 <p className="text-reveal">
-                  I'm a passionate software developer focused on creating elegant, user-friendly solutions to real-world problems. 
-                  With expertise in both front-end and back-end technologies, I enjoy the full development process from concept to deployment.
+                  I’m a front-end developer with strong skills in React, Next.js, and Tailwind CSS. I enjoy building clean, responsive interfaces and have completed Meta’s professional training. I’ve created real-world apps like digital banking and transport systems that focus on user experience and performance.
                 </p>
                 <p className="text-reveal">
-                  My approach combines clean code practices with modern frameworks to build applications that are not only functional
-                  but also intuitive and enjoyable to use. I'm constantly learning and exploring new technologies to enhance my skillset.
+                  I also work with data using SQL and Python to support business decisions. At Baly, I analyzed user behavior, measured campaign results, and helped improve engagement. I love blending design and data to build smart, user-focused solutions.
                 </p>
               </div>
             </div>
@@ -69,43 +67,47 @@ const AboutSection = () => {
               <h3 className="text-xl font-semibold mb-4 text-reveal text-white">Certifications</h3>
               
               <div className="space-y-4">
-                <Card className="overflow-hidden hover-lift bg-black/40 border-white/30">
-                  <CardContent className="p-4 flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-md flex items-center justify-center bg-white/90 shadow floating">
-                      <img src="/meta.jpg" alt="Meta Logo" className="w-6 h-6 object-contain" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-reveal text-white">Meta Front-End Developer</h4>
-                      <a
-                        href="https://www.coursera.org/account/accomplishments/specialization/SAU2JSL6S75M"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-300 text-sm transition duration-300 transform hover:underline hover:scale-105 hover:text-white"
-                      >
-                        Certificate
-                      </a>
-                    </div>
-                  </CardContent>
-                </Card>
+                <a
+                  href="https://www.coursera.org/account/accomplishments/verify/635GP4PSHVEK"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <Card className="overflow-hidden hover-lift bg-black/40 border-white/30 transition-transform transform hover:scale-105">
+                    <CardContent className="p-4 flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-md flex items-center justify-center bg-white/90 shadow floating">
+                        <img src="/google.png" alt="Google Logo" className="w-6 h-6 object-contain" />
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-reveal text-white">
+                          Google Python Crash
+                        </h4>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </a>
+                
+                <a
+                  href="https://www.coursera.org/account/accomplishments/specialization/SAU2JSL6S75M"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <Card className="overflow-hidden hover-lift bg-black/40 border-white/30 transition-transform transform hover:scale-105">
+                    <CardContent className="p-4 flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-md flex items-center justify-center bg-white/90 shadow floating">
+                        <img src="/meta.jpg" alt="Meta Logo" className="w-6 h-6 object-contain" />
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-reveal text-white">
+                          Meta Front-End Developer
+                        </h4>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </a>
 
-                <Card className="overflow-hidden hover-lift bg-black/40 border-white/30">
-                  <CardContent className="p-4 flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-md flex items-center justify-center bg-white/90 shadow floating">
-                      <img src="/google.png" alt="Google Logo" className="w-6 h-6 object-contain" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-reveal text-white">Google Python Crash</h4>
-                      <a
-                        href="https://www.coursera.org/account/accomplishments/verify/635GP4PSHVEK"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-300 text-sm transition duration-300 transform hover:underline hover:scale-105 hover:text-white"
-                      >
-                        Certificate
-                      </a>
-                    </div>
-                  </CardContent>
-                </Card>
+                
               </div>
             </div>
           </div>
