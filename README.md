@@ -2,6 +2,11 @@
 
 Welcome to my personal portfolio website — a showcase of my projects, skills, and experience as a developer. Built with **React**, styled using **Tailwind CSS**, and enhanced with **shadcn/ui**, this site is fast, responsive, and visually elegant.
 
+## 📸 Live Preview
+
+👉 [Demo](https://mohammedsaeed.netlify.app)
+
+
 ## 🚀 Technologies Used
 
 - **React** – For building interactive UI components
@@ -18,9 +23,7 @@ Welcome to my personal portfolio website — a showcase of my projects, skills, 
 - 📬 Contact section with email, GitHub, and LinkedIn links
 - 📁 Clean code structure and reusable components
 
-## 📸 Live Preview
 
-👉 [Click here to view the live site](https://preview--mohammedsaeed-portfolio.lovable.app/#contact)
 
 ## 📁 Getting Started
 
