@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Github, ExternalLink } from 'lucide-react';
@@ -25,21 +26,21 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    name: "Real Estate Website",
+    name: "Aziz",
     description: "A responsive site showcasing properties, search/filter features, and contact form integration.",
     techStack: ["Next.js", "Tailwind CSS", "Firebase"],
-    image: "https://placehold.co/600x400/000000/FFFFFF/png?text=Real+Estate+Website",
-    githubUrl: "#",
-    liveUrl: "#"
+    image: "aziz.png",
+    githubUrl: "https://github.com/MohammedSaeed9444/aziz",
+    liveUrl: "https://preview--aziz.lovable.app"
   },
   {
     id: 3,
     name: "Bank Website",
     description: "An online cinema booking system with real-time seat selection and user authentication.",
     techStack: ["Python (Flask)", "SQL", "CSS"],
-    image: "https://placehold.co/600x400/000000/FFFFFF/png?text=Bank+Website",
+    image: "3la.png",
     githubUrl: "#",
-    liveUrl: "#"
+    liveUrl: "https://imaginative-boba-5cf18f.netlify.app"
   }
 ];
 
@@ -52,7 +53,7 @@ const ProjectsSection = () => {
         {/* Mysterious Light Effects - No visible source */}
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-80 h-full">
           <div 
-            className="w-full h-full opacity-15 blur-3xl animate-pulse"
+            className="w-full h-full opacity-15 blur-3xl"
             style={{
               background: `linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.1) 70%, transparent 100%)`,
               animationDuration: '4s',
@@ -102,7 +103,7 @@ const ProjectsSection = () => {
           {[...Array(8)].map((_, i) => (
             <div
               key={i}
-              className="absolute rounded-full bg-white/8 opacity-30 blur-xl animate-ping"
+              className="absolute rounded-full bg-white/8 opacity-30 blur-xl animate-pulse"
               style={{
                 width: `${60 + i * 12}px`,
                 height: `${60 + i * 12}px`,
@@ -205,13 +206,13 @@ const ProjectsSection = () => {
               </div>
               
               <div className="flex gap-3">
-                <Button variant="outline" size="sm" asChild className="hover-lift border-white/40 text-white/90 hover:bg-white/10 animate-pulse" style={{ animationDuration: '5s' }}>
+                <Button variant="outline" size="sm" asChild className="bg-black/10 border-white/40 text-white/90 hover:bg-white/90 hover:text-black animate-pulse" style={{ animationDuration: '5s' }}>
                   <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                     <Github className="mr-2 h-4 w-4 animate-spin" style={{ animationDuration: '8s' }} />
                     Code
                   </a>
                 </Button>
-                <Button size="sm" asChild className="hover-lift bg-white hover:bg-gray-200 text-black animate-pulse" style={{ animationDuration: '4s' }}>
+                <Button size="sm" asChild className=" bg-black/10 border-white/40 text-white/90 hover:bg-white/90 hover:text-black animate-pulse" style={{ animationDuration: '4s' }}>
                   <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-2 h-4 w-4" />
                     Demo
