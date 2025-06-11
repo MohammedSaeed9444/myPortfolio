@@ -27,19 +27,19 @@ const projects: Project[] = [
   {
     id: 2,
     name: "Aziz",
-    description: "A responsive site showcasing properties, search/filter features, and contact form integration.",
-    techStack: ["Next.js", "Tailwind CSS", "Firebase"],
+    description: "An application to help find missing people.",
+    techStack: ["Next.js", "Tailwind CSS"],
     image: "aziz.png",
     githubUrl: "https://github.com/MohammedSaeed9444/aziz",
     liveUrl: "https://preview--aziz.lovable.app"
   },
   {
     id: 3,
-    name: "Bank Website",
+    name: "3AL Tareeq",
     description: "An online cinema booking system with real-time seat selection and user authentication.",
-    techStack: ["Python (Flask)", "SQL", "CSS"],
+    techStack: ["Next.js", "CSS"],
     image: "3la.png",
-    githubUrl: "#",
+    githubUrl: "https://github.com/MohammedSaeed9444/abri",
     liveUrl: "https://imaginative-boba-5cf18f.netlify.app"
   }
 ];
