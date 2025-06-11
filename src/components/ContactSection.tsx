@@ -93,7 +93,7 @@ const ContactSection = () => {
             <p className="text-gray-300 mb-4 text-reveal">
               I'm currently available for freelance work and full-time positions.
             </p>
-            <Button variant="outline" asChild className="hover-lift border-white/40 text-white hover:bg-white/10">
+            <Button variant="outline" asChild className="bg-black/10 border-white/40 text-white/90 hover:bg-white/90 hover:text-black animate-pulse">
               <a href="/resume.pdf" download>
                 Download Resume
               </a>
