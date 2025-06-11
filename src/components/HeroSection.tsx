@@ -158,7 +158,7 @@ const HeroSection: React.FC = () => {
               {/* Main Heading */}
               <div className="space-y-4">
                 <h1 className={`text-6xl md:text-7xl lg:text-8xl font-black leading-none transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                  <span className="block text-white drop-shadow-lg animate-pulse" style={{ animationDuration: '3s' }}>Creative</span>
+                  <span className="block text-white drop-shadow-lg animate-pulse" style={{ animationDuration: '3s' }}>Software</span>
                   <span className="block text-white drop-shadow-lg animate-pulse" style={{ animationDuration: '3s', animationDelay: '0.5s' }}>
                     Developer
                   </span>
@@ -174,16 +174,16 @@ const HeroSection: React.FC = () => {
               {/* Description */}
               <p className={`text-xl text-gray-300 leading-relaxed max-w-lg mx-auto lg:mx-0 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                 Crafting exceptional digital experiences with cutting-edge technologies. 
-                Specializing in <span className="text-white font-semibold animate-pulse">full-stack development</span> and{' '}
-                <span className="text-white font-semibold animate-pulse">innovative solutions</span>.
+                Specializing in <span className="text-white font-semibold animate-pulse">FrontEnd</span> and{' '}
+                <span className="text-white font-semibold animate-pulse">iOS</span>.
               </p>
 
               {/* Tech Stack Icons */}
               <div className={`flex justify-center lg:justify-start gap-6 transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                 {[
-                  { icon: Code, label: 'Code', color: 'text-white' },
-                  { icon: Zap, label: 'Fast', color: 'text-white' },
-                  { icon: Sparkles, label: 'Creative', color: 'text-white' },
+                  { icon: Code, label: '', color: 'text-white' },
+                  { icon: Zap, label: '', color: 'text-white' },
+                  { icon: Sparkles, label: '', color: 'text-white' },
                 ].map((item, index) => (
                   <div key={index} className="flex flex-col items-center gap-2 group cursor-pointer">
                     <div className="p-3 rounded-full bg-white/5 border border-white/30 group-hover:border-white/50 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-white/20 animate-bounce" style={{ animationDelay: `${index * 0.3}s`, animationDuration: '2s' }}>
@@ -208,7 +208,9 @@ const HeroSection: React.FC = () => {
                 <Button 
                   size="lg" 
                   variant="outline"
-                  className="text-lg px-8 py-6 border-2 border-white/50 text-white hover:bg-white/10 hover:border-white hover:text-white transition-all duration-300 hover:scale-105"
+                  className="text-lg px-8 py-6 border-2 border-white/50 text-white bg-transparent 
+hover:bg-white hover:text-black hover:border-white 
+transition-all duration-300 hover:scale-105"
                   onClick={() => scrollToSection('contact')}
                 >
                   Let&apos;s Connect
@@ -233,41 +235,38 @@ const HeroSection: React.FC = () => {
                 </div>
 
                 {/* Animated Floating Elements */}
-                <div className="absolute -top-6 -right-6 w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-lg shadow-white/30 animate-bounce" style={{ animationDuration: '3s' }}>
-                  <Zap className="w-8 h-8 text-black animate-spin" style={{ animationDuration: '4s' }} />
-                </div>
+
                 <div className="absolute -bottom-6 -left-6 w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-lg shadow-white/30 animate-pulse">
                   <Code className="w-7 h-7 text-black" />
                 </div>
-                <div className="absolute top-1/3 -right-4 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg shadow-white/30 animate-ping" style={{ animationDuration: '2s' }}>
-                  <Sparkles className="w-6 h-6 text-black animate-spin" style={{ animationDuration: '2s' }} />
-                </div>
+                
 
                 {/* Code Snippet Floating Card */}
-                <div className="absolute -bottom-4 right-8 bg-black/80 backdrop-blur-sm border border-white/30 rounded-lg p-4 shadow-xl shadow-white/20 transform rotate-3 hover:rotate-0 transition-transform duration-300 animate-pulse" style={{ animationDuration: '6s' }}>
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="w-3 h-3 bg-white rounded-full animate-ping" style={{ animationDuration: '1s' }}></div>
-                    <div className="w-3 h-3 bg-gray-400 rounded-full animate-ping" style={{ animationDuration: '1.5s' }}></div>
-                    <div className="w-3 h-3 bg-gray-600 rounded-full animate-ping" style={{ animationDuration: '2s' }}></div>
+                  <div className="absolute -bottom-4 right-8 bg-black/80 backdrop-blur-sm border border-white/30 rounded-lg p-4 shadow-xl shadow-white/20 transform rotate-3 hover:rotate-0 transition-transform duration-300 animate-pulse" style={{ animationDuration: '6s' }}>
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="w-3 h-3 bg-green-400 rounded-full animate-ping" style={{ animationDuration: '1s' }}></div>
+                      <div className="w-3 h-3 bg-yellow-400 rounded-full animate-ping" style={{ animationDuration: '1.5s' }}></div>
+                      <div className="w-3 h-3 bg-red-500 rounded-full animate-ping" style={{ animationDuration: '2s' }}></div>
+                    </div>
+
+                    <div className="text-xs font-mono text-gray-300 space-y-1">
+                      <div className="text-blue-300">const</div>
+                    <div className="text-yellow-300">developer = &#123;</div>
+                    <div className="text-green-400 ml-2">creative: true</div>
+                    <div className="text-yellow-300">&#125;</div>
+                    </div>
                   </div>
-                  <div className="text-xs font-mono text-gray-300">
-                    <div className="text-white">const</div>
-                    <div className="text-white">developer = &#123;</div>
-                    <div className="text-gray-300 ml-2">creative: true</div>
-                    <div className="text-white">&#125;</div>
-                  </div>
-                </div>
+
               </div>
             </div>
           </div>
 
           {/* Bottom Stats */}
-          <div className={`mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className={`mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-center transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             {[
-              { number: '3+', label: 'Years Experience' },
-              { number: '15+', label: 'Projects Completed' },
-              { number: '4', label: 'Tech Stacks' },
-              { number: '100%', label: 'Client Satisfaction' },
+              { number: '2+', label: 'Years Experience' },
+              { number: '8+', label: 'Projects Completed' },
+              { number: '3', label: 'Tech Stacks' },
             ].map((stat, index) => (
               <div key={index} className="group cursor-pointer">
                 <div className="text-3xl font-black text-white group-hover:scale-110 transition-transform duration-300 animate-pulse" style={{ animationDelay: `${index * 0.2}s`, animationDuration: '3s' }}>
