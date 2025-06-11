@@ -16,9 +16,9 @@ const skills: Skill[] = [
   { name: 'Next.js', iconSrc: '/nt.png', category: 'Frameworks' },
   { name: 'SQL', iconSrc: '/sql.png', category: 'Languages' },
   { name: 'React', iconSrc: '/react.png', category: 'Frameworks' },
-  { name: 'GitHub', iconSrc: '/github.png', category: 'Frontend' },
+  { name: 'GitHub', iconSrc: '/github.png', category: 'Tools' },
   { name: 'Figma', iconSrc: '/fig.webp', category: 'Tools' },
-  { name: 'Tailwind', iconSrc: '/ti.webp', category: 'Frontend' },
+  { name: 'Tailwind', iconSrc: '/ti.webp', category: 'library' },
 ];
 
 const SkillsSection = () => {
