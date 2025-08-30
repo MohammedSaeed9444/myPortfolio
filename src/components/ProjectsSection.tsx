@@ -46,7 +46,7 @@ const projects: Project[] = [
     name: "Cinema Green",
     description: "A site for viewing movies and seriesز",
     techStack: ["React", "CSS"],
-    image: "3la.png",
+    image: "cin1.png",
     githubUrl: "#",
     liveUrl: "https://cinemagreen.netlify.app/"
   }
