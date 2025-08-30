@@ -26,7 +26,7 @@ const projects: Project[] = [
   {
     id: 2,
     name: "Aziz",
-    description: "A responsive site showcasing properties, search/filter features, and contact form integration.",
+    description: "Application to search for missing persons",
     techStack: ["Next.js", "Tailwind CSS", "Firebase"],
     image: "aziz.png",
     githubUrl: "https://github.com/MohammedSaeed9444/aziz",
@@ -34,12 +34,21 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    name: "Bank Website",
-    description: "An online cinema booking system with real-time seat selection and user authentication.",
+    name: "3AL TAREEQ",
+    description: "An application for transporting passengers between governorates.",
     techStack: ["Python (Flask)", "SQL", "CSS"],
     image: "3la.png",
     githubUrl: "#",
     liveUrl: "https://imaginative-boba-5cf18f.netlify.app"
+  },
+  {
+    id: 4,
+    name: "Cinema Green",
+    description: "A site for viewing movies and seriesز",
+    techStack: ["React", "CSS"],
+    image: "3la.png",
+    githubUrl: "#",
+    liveUrl: "https://cinemagreen.netlify.app/"
   }
 ];
 
