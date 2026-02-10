@@ -15,6 +15,27 @@ interface Project {
 
 const projects: Project[] = [
   {
+    
+    id: 1,
+    name: "CRM Ticketing",
+    description: "full-stack ticket management system for the CRM team at BALY, enabling agents to create, view, and manage trip-related tickets", 
+    techStack: ["Next.js", " Tailwind", "PostgreSQL", "RESTful APIs"],
+    image: "p11.png",
+    githubUrl: "https://github.com/MohammedSaeed9444/Zbaly",
+    liveUrl: "https://balytickets.netlify.app/"
+  },
+  {
+    
+    id: 2,
+    name: "Sberbank App",
+    description: "A simple bank dashboard with user login, transaction tracking, and balance summaries.",
+    techStack: ["Next.js", "Shadcn/ui", "Express" ],
+    image: "p11.png",
+    githubUrl: "",
+    liveUrl: "https://samaalain.netlify.app/"
+  },
+  {
+
     id: 1,
     name: "Sberbank App",
     description: "A simple bank dashboard with user login, transaction tracking, and balance summaries.",
@@ -24,7 +45,7 @@ const projects: Project[] = [
     liveUrl: "https://dreamy-biscotti-2e5efc.netlify.app"
   },
   {
-    id: 2,
+    id: 3,
     name: "Aziz",
     description: "Application to search for missing persons",
     techStack: ["Next.js", "Tailwind CSS", "Firebase"],
@@ -33,7 +54,7 @@ const projects: Project[] = [
     liveUrl: "https://preview--aziz.lovable.app"
   },
   {
-    id: 3,
+    id: 4,
     name: "3AL TAREEQ",
     description: "An application for transporting passengers between governorates.",
     techStack: ["Python (Flask)", "SQL", "CSS"],
@@ -42,7 +63,7 @@ const projects: Project[] = [
     liveUrl: "https://imaginative-boba-5cf18f.netlify.app"
   },
   {
-    id: 4,
+    id: 5,
     name: "Cinema Green",
     description: "A site for viewing movies and seriesز",
     techStack: ["React", "CSS"],
