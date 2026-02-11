@@ -89,10 +89,10 @@ const ContactSection = () => {
           </div>
 
           <div className="mt-10 bg-white/10 border border-white/20 p-6 rounded-xl scroll-scale">
-            <h4 className="font-semibold mb-2 text-reveal text-white">Looking for a developer?</h4>
+            {/*<h4 className="font-semibold mb-2 text-reveal text-white">Looking for a developer?</h4>
             <p className="text-gray-300 mb-4 text-reveal">
               I'm currently available for freelance work and full-time positions.
-            </p>
+            </p>*/}
             <Button variant="outline" asChild className="bg-black/10 border-white/40 text-white/90 hover:bg-white/90 hover:text-black animate-pulse">
               <a href="Mohamed Saeed__Front-End.pdf" download>
                 Download Resume
