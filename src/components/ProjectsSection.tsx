@@ -42,7 +42,7 @@ const projects: Project[] = [
     image: "cin1.png",
     githubUrl: "#",
     liveUrl: "https://cinemagreen.netlify.app/"
-  }
+  },
   {
 
     id: 4,
