@@ -35,8 +35,17 @@ const projects: Project[] = [
     liveUrl: "https://samaalain.netlify.app/"
   },
   {
+    id: 3,
+    name: "Cinema Green",
+    description: "A site for viewing movies and seriesز",
+    techStack: ["React", "CSS"],
+    image: "cin1.png",
+    githubUrl: "#",
+    liveUrl: "https://cinemagreen.netlify.app/"
+  }
+  {
 
-    id: 1,
+    id: 4,
     name: "Sberbank App",
     description: "A simple bank dashboard with user login, transaction tracking, and balance summaries.",
     techStack: ["Next.js", "Shadcn/ui", "Express" ],
@@ -45,7 +54,7 @@ const projects: Project[] = [
     liveUrl: "https://dreamy-biscotti-2e5efc.netlify.app"
   },
   {
-    id: 3,
+    id: 5,
     name: "Aziz",
     description: "Application to search for missing persons",
     techStack: ["Next.js", "Tailwind CSS", "Firebase"],
@@ -54,7 +63,7 @@ const projects: Project[] = [
     liveUrl: "https://preview--aziz.lovable.app"
   },
   {
-    id: 4,
+    id: 6,
     name: "3AL TAREEQ",
     description: "An application for transporting passengers between governorates.",
     techStack: ["Python (Flask)", "SQL", "CSS"],
@@ -62,15 +71,7 @@ const projects: Project[] = [
     githubUrl: "#",
     liveUrl: "https://imaginative-boba-5cf18f.netlify.app"
   },
-  {
-    id: 5,
-    name: "Cinema Green",
-    description: "A site for viewing movies and seriesز",
-    techStack: ["React", "CSS"],
-    image: "cin1.png",
-    githubUrl: "#",
-    liveUrl: "https://cinemagreen.netlify.app/"
-  }
+  
 ];
 
 const ProjectsSection = () => {
