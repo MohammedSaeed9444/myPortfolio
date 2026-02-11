@@ -20,17 +20,17 @@ const projects: Project[] = [
     name: "CRM Ticketing",
     description: "full-stack ticket management system for the CRM team at BALY, enabling agents to create, view, and manage trip-related tickets", 
     techStack: ["Next.js", " Tailwind", "PostgreSQL", "RESTful APIs"],
-    image: "p11.png",
+    image: "CRM.png",
     githubUrl: "https://github.com/MohammedSaeed9444/Zbaly",
     liveUrl: "https://balytickets.netlify.app/"
   },
   {
     
     id: 2,
-    name: "Sberbank App",
-    description: "A simple bank dashboard with user login, transaction tracking, and balance summaries.",
-    techStack: ["Next.js", "Shadcn/ui", "Express" ],
-    image: "p11.png",
+  name: "Sama Alain",
+    description: "Landing Page for Printing Solutions Company, showcasing services, portfolio, and contact information with a modern design.",
+    techStack: ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS"],
+    image: "Sama.png",
     githubUrl: "",
     liveUrl: "https://samaalain.netlify.app/"
   },
